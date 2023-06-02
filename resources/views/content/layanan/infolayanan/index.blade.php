@@ -26,7 +26,7 @@
                                     @foreach ($list_infolayanan as $infolayanan)
                                         <tr>
                                             <td class="checkbox-column text-center"> {{ $loop->iteration }} </td>
-                                            <td>{{ $infolayanan->isi }}</td>
+                                            <td>{!! nl2br($infolayanan->isi) !!}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
                                                     <x-template.button.edit dto="modal"
@@ -64,9 +64,7 @@
                 <div class="modal-body">
                     <form action="{{ url('data_manager/admin/infolayanan') }}" method="post">
                         @csrf
-                        <div id="editor-container" name="isi">
-                            <input type="text" name="isi">
-                        </div>
+                        <textarea name="isi" class="form-control summernote"></textarea>
                         <input type="submit" class="mt-4 btn btn-primary float-right">
                     </form>
                 </div>
@@ -96,39 +94,9 @@
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div id="editor-container" name="isi">
-                                <input type="text" name="isi">
-                            </div>
+                            <textarea name="isi" class="form-control summernote">{!! nl2br($infolayanan->isi) !!}</textarea>
                             <input type="submit" class="mt-4 btn btn-primary float-right">
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-    <!-- Modal Show -->
-    @foreach ($list_infolayanan as $infolayanan)
-        <div class="modal fade" id="ModalShow{{ $infolayanan->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="ModalShowTitle{{ $infolayanan->id }}" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalShowTitle{{ $infolayanan->id }}">Detail Data
-                            {{ $infolayanan->nama }}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <textarea name="text" id="editor-container" cols="30" rows="10">{{ $infolayanan->isi }}</textarea>
-                        </div>
                     </div>
                 </div>
             </div>

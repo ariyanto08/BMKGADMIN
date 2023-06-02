@@ -34,8 +34,7 @@
     <link href="{{ url('public') }}/assets/css/elements/avatar.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/editors/quill/quill.snow.css">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
     <style>
         .layout-px-spacing {
@@ -104,6 +103,12 @@
     <script src="{{ url('public') }}/assets/js/users/account-settings.js"></script>
     <script src="{{ url('public') }}/plugins/select2/select2.min.js"></script>
     <script src="{{ url('public') }}/plugins/editors/quill/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote();
+        });
+    </script>
     <script>
         var quill = new Quill('#editor-container', {
             modules: {

@@ -248,7 +248,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="data" data-active="{{ checkRouteActive('data_manager/data') }}" class="dropdown-toggle">
+                <a href="pelayanan_data" data-active="{{ checkRouteTrue('data_manager/admin/pelayanan_data') }}" class="dropdown-toggle">
                     <div class="">
                         <i data-feather="tool"></i>
                         <span>Pelayanan Data Informasi</span>
@@ -257,7 +257,16 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="pelayanan" data-active="{{ checkRouteActive('data_manager/pelayanan') }}"
+                <a href="prosedur" data-active="{{ checkRouteTrue('data_manager/admin/prosedur') }}" class="dropdown-toggle">
+                    <div class="">
+                        <i data-feather="tool"></i>
+                        <span>Prosedur Pembayaran Jasa Layanan</span>
+                    </div>
+
+                </a>
+            </li>
+            <li class="menu">
+                <a href="pelayanan" data-active="{{ checkRouteTrue('data_manager/admin/pelayanan') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="tool"></i>
@@ -269,7 +278,7 @@
 
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Publikasi</div>
             <li class="menu">
-                <a href="berita" data-active="{{ checkRouteActive('data_manager/berita') }}"
+                <a href="berita" data-active="{{ checkRouteTrue('data_manager/admin/berita') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="upload-cloud"></i>
@@ -278,7 +287,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="artikel" data-active="{{ checkRouteActive('data_manager/artikel') }}"
+                <a href="artikel" data-active="{{ checkRouteTrue('data_manager/admin/artikel') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="upload-cloud"></i>
@@ -287,7 +296,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="buletin" data-active="{{ checkRouteActive('data_manager/buletin') }}"
+                <a href="buletin" data-active="{{ checkRouteTrue('data_manager/admin/buletin') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="upload-cloud"></i>
@@ -296,7 +305,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="edukasi" data-active="{{ checkRouteActive('data_manager/edukasi') }}"
+                <a href="edukasi" data-active="{{ checkRouteTrue('data_manager/admin/edukasi') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="upload-cloud"></i>
@@ -305,7 +314,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="transparansi" data-active="{{ checkRouteActive('data_manager/transparansi') }}"
+                <a href="transparansi" data-active="{{ checkRouteTrue('data_manager/admin/transparansi') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="upload-cloud"></i>
@@ -313,10 +322,10 @@
                     </div>
                 </a>
             </li>
-            
+
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Galeri</div>
             <li class="menu">
-                <a href="foto" {{ checkRouteActive('data_manager/foto') }} class="dropdown-toggle">
+                <a href="foto" data-active="{{ checkRouteTrue('data_manager/admin/foto') }}" class="dropdown-toggle">
                     <div class="">
                         <i data-feather="image"></i>
                         <span>Foto</span>

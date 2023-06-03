@@ -146,9 +146,6 @@
         multiCheck(c3);
     </script>
     <script>
-        var firstUpload = new FileUploadWithPreview('myFirstImage')
-    </script>
-    <script>
         var slides = document.querySelectorAll('#slides .slide');
         var currentSlide = 0;
         var slideInterval = setInterval(nextSlide, 600);

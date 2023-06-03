@@ -2,19 +2,20 @@
 
 namespace App\Models;
 
-use App\Models\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Model;
 
-class Potensi extends Model
+class Pelayanan extends Model
 {
     use HasFactory;
-    protected $table = 'potensi_hujan';
+    protected $table = 'layanan_publik_pelayanan';
+
     function handleUploadPdf()
     {
         $this->handleDelete();
         if (request()->hasFile('file')) {
             $file = request()->file('file');
-            $destination = "pdf/potensi";
+            $destination = "pdf/pelayanan";
             $filename = $file->getClientOriginalName();
             $url =  $file->storeAs($destination, $filename);
             $this->file = "" . $url;

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\Model;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class FlightDoc extends Model
@@ -16,8 +15,7 @@ class FlightDoc extends Model
         if (request()->hasFile('file')) {
             $file = request()->file('file');
             $destination = "pdf/flight_doc";
-            $randomStr = Str::random(5);
-            $filename = $this->id . "-" . time() . "-" . $randomStr . "." . $file->extension();
+            $filename = $file->getClientOriginalName();
             $url =  $file->storeAs($destination, $filename);
             $this->file = "" . $url;
             $this->save();

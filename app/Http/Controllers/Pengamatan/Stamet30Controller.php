@@ -20,7 +20,7 @@ class Stamet30Controller extends Controller
         $stamet30->ket = request('ket');
         $stamet30->save();
         $stamet30->handleUploadFoto();
-        return redirect('data_manager/admin/stamet30');
+        return redirect('data_manager/admin/stamet30')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Stamet30 $stamet30)
     {
@@ -28,13 +28,13 @@ class Stamet30Controller extends Controller
         $stamet30->save();
         if (request('gambar')) $stamet30->handleUploadFoto();
 
-        return redirect('data_manager/admin/stamet30');
+        return redirect('data_manager/admin/stamet30')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Stamet30 $stamet30)
     {
         $stamet30->delete();
         $stamet30->handleDelete();
 
-        return redirect('data_manager/admin/stamet30');
+        return redirect('data_manager/admin/stamet30')->with('danger', 'Data Berhasil Dihapus');
     }
 }

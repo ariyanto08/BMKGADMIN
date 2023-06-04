@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Galeri\FotoController;
 use App\Http\Controllers\Beranda\PegawaiController;
 use App\Http\Controllers\Penerbangan\AcsController;
@@ -44,8 +46,13 @@ use App\Http\Controllers\Prakiraan\Maritim\PasangSurutController;
 |
 */
 
-Route::prefix('data_manager')->group(function () {
-    Route::prefix('admin')->group(function () {
+Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('login', [AuthController::class, 'loginproses']);
+Route::get('logout', [AuthController::class, 'logout']);
+
+
+Route::prefix('data_manager')->middleware('auth')->group(function () {
+    Route::prefix('admin')->middleware('auth')->group(function () {
         Route::resource('pegawai', PegawaiController::class);
         Route::resource('penghargaan', PenghargaanController::class);
         Route::resource('mingguan', MingguanKtpController::class);
@@ -101,6 +108,7 @@ Route::prefix('data_manager')->group(function () {
         Route::resource('transparansi', TransparansiController::class);
         Route::resource('pelayanan', PelayananController::class);
         Route::resource('prosedur', ProsedurController::class);
+        Route::resource('user', UserController::class);
 
     });
 });

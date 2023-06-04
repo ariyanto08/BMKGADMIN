@@ -20,7 +20,7 @@ class WindroseController extends Controller
         $windrose->ket = request('ket');
         $windrose->save();
         $windrose->handleUploadFoto();
-        return redirect('data_manager/admin/windrose');
+        return redirect('data_manager/admin/windrose')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Windrose $windrose)
     {
@@ -28,13 +28,13 @@ class WindroseController extends Controller
         $windrose->save();
         if (request('gambar')) $windrose->handleUploadFoto();
 
-        return redirect('data_manager/admin/windrose');
+        return redirect('data_manager/admin/windrose')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Windrose $windrose)
     {
         $windrose->delete();
         $windrose->handleDelete();
 
-        return redirect('data_manager/admin/windrose');
+        return redirect('data_manager/admin/windrose')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,7 +20,7 @@ class LapisanController extends Controller
         $lapisan->ket = request('ket');
         $lapisan->save();
         $lapisan->handleUploadFoto();
-        return redirect('data_manager/admin/lapisan');
+        return redirect('data_manager/admin/lapisan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Lapisan $lapisan)
     {
@@ -28,12 +28,12 @@ class LapisanController extends Controller
         $lapisan->save();
         if (request('gambar')) $lapisan->handleUploadFoto();
 
-        return redirect('data_manager/admin/lapisan');
+        return redirect('data_manager/admin/lapisan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Lapisan $lapisan)
     {
         $lapisan->delete();
         $lapisan->handleDelete();
 
-        return redirect('data_manager/admin/lapisan');
+        return redirect('data_manager/admin/lapisan')->with('danger', 'Data Berhasil Dihapus');
     }}

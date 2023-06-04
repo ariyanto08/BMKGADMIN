@@ -21,7 +21,7 @@ class BuletinController extends Controller
         $buletin->save();
         $buletin->handleUploadPdf();
         $buletin->handleUploadGambar();
-        return redirect('data_manager/admin/buletin');
+        return redirect('data_manager/admin/buletin')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Buletin $buletin)
     {
@@ -29,13 +29,13 @@ class BuletinController extends Controller
         $buletin->save();
         if (request('file')) $buletin->handleUploadPdf();
         if (request('gambar')) $buletin->handleUploadGambar();
-        return redirect('data_manager/admin/buletin');
+        return redirect('data_manager/admin/buletin')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Buletin $buletin)
     {
         $buletin->delete();
         $buletin->handleDelete();
         $buletin->handleDeleteGambar();
-        return redirect('data_manager/admin/buletin');
+        return redirect('data_manager/admin/buletin')->with('danger', 'Data Berhasil Dihapus');
     }
 }

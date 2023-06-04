@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Pengamatan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Peta;
-use Illuminate\Http\Request;
 
 class PetaController extends Controller
 {
@@ -21,7 +20,7 @@ class PetaController extends Controller
         $peta->ket = request('ket');
         $peta->save();
         $peta->handleUploadFoto();
-        return redirect('data_manager/admin/peta');
+        return redirect('data_manager/admin/peta')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Peta $peta)
     {
@@ -29,13 +28,13 @@ class PetaController extends Controller
         $peta->save();
         if (request('gambar')) $peta->handleUploadFoto();
 
-        return redirect('data_manager/admin/peta');
+        return redirect('data_manager/admin/peta')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Peta $peta)
     {
         $peta->delete();
         $peta->handleDelete();
 
-        return redirect('data_manager/admin/peta');
+        return redirect('data_manager/admin/peta')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,19 +20,19 @@ class FlightDocController extends Controller
         $flightdoc->ket = request('ket');
         $flightdoc->save();
         $flightdoc->handleUploadPdf();
-        return redirect('data_manager/admin/flightdoc');
+        return redirect('data_manager/admin/flightdoc')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(FlightDoc $flightdoc)
     {
         $flightdoc->ket = request('ket');
         $flightdoc->save();
         if (request('file')) $flightdoc->handleUploadPdf();
-        return redirect('data_manager/admin/flightdoc');
+        return redirect('data_manager/admin/flightdoc')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(FlightDoc $flightdoc)
     {
         $flightdoc->delete();
         $flightdoc->handleDelete();
-        return redirect('data_manager/admin/flightdoc');
+        return redirect('data_manager/admin/flightdoc')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,21 +20,20 @@ class FotoController extends Controller
         $foto->ket = request('ket');
         $foto->save();
         $foto->handleUploadFoto();
-        return redirect('data_manager/admin/foto');
+        return redirect('data_manager/admin/foto')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Foto $foto)
     {
         $foto->ket = request('ket');
         $foto->save();
         if (request('gambar')) $foto->handleUploadFoto();
-
-        return redirect('data_manager/admin/foto');
+        return redirect('data_manager/admin/foto')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Foto $foto)
     {
         $foto->delete();
         $foto->handleDelete();
 
-        return redirect('data_manager/admin/foto');
+        return redirect('data_manager/admin/foto')->with('danger', 'Data Berhasil Dihapus');
     }
 }

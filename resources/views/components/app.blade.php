@@ -68,6 +68,7 @@
         <!--  BEGIN CONTENT PART  -->
         <div id="content" class="main-content">
             <div class="layout-px-spacing">
+                <x-template.notif />
                 {{ $slot }}
             </div>
             <x-template.footer />

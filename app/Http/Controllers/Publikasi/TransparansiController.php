@@ -21,7 +21,7 @@ class TransparansiController extends Controller
         $transparansi->kategori = request('kategori');
         $transparansi->save();
         $transparansi->handleUploadPdf();
-        return redirect('data_manager/admin/transparansi');
+        return redirect('data_manager/admin/transparansi')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Transparansi $transparansi)
     {
@@ -29,12 +29,12 @@ class TransparansiController extends Controller
         $transparansi->kategori = request('kategori');
         $transparansi->save();
         if (request('file')) $transparansi->handleUploadPdf();
-        return redirect('data_manager/admin/transparansi');
+        return redirect('data_manager/admin/transparansi')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Transparansi $transparansi)
     {
         $transparansi->delete();
         $transparansi->handleDelete();
-        return redirect('data_manager/admin/transparansi');
+        return redirect('data_manager/admin/transparansi')->with('danger', 'Data Berhasil Dihapus');
     }
 }

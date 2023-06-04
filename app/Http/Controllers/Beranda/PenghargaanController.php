@@ -20,7 +20,7 @@ class PenghargaanController extends Controller
         $penghargaan->ket = request('ket');
         $penghargaan->save();
         $penghargaan->handleUploadFoto();
-        return redirect('data_manager/admin/penghargaan');
+        return redirect('data_manager/admin/penghargaan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Penghargaan $penghargaan)
     {
@@ -28,13 +28,13 @@ class PenghargaanController extends Controller
         $penghargaan->save();
         if (request('gambar')) $penghargaan->handleUploadFoto();
 
-        return redirect('data_manager/admin/penghargaan');
+        return redirect('data_manager/admin/penghargaan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Penghargaan $penghargaan)
     {
         $penghargaan->delete();
         $penghargaan->handleDelete();
 
-        return redirect('data_manager/admin/penghargaan');
+        return redirect('data_manager/admin/penghargaan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

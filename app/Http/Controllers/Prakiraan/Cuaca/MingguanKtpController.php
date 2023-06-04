@@ -20,20 +20,20 @@ class MingguanKtpController extends Controller
         $mingguan->ket = request('ket');
         $mingguan->save();
         $mingguan->handleUploadFoto();
-        return redirect('data_manager/admin/mingguan');
+        return redirect('data_manager/admin/mingguan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Mingguan $mingguan)
     {
         $mingguan->ket = request('ket');
         $mingguan->save();
         if (request('gambar')) $mingguan->handleUploadFoto();
-        return redirect('data_manager/admin/mingguan');
+        return redirect('data_manager/admin/mingguan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Mingguan $mingguan)
     {
         $mingguan->delete();
         $mingguan->handleDelete();
 
-        return redirect('data_manager/admin/mingguan');
+        return redirect('data_manager/admin/mingguan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,7 +20,7 @@ class KelembapanController extends Controller
         $kelembapan->ket = request('ket');
         $kelembapan->save();
         $kelembapan->handleUploadFoto();
-        return redirect('data_manager/admin/kelembapan');
+        return redirect('data_manager/admin/kelembapan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Kelembapan $kelembapan)
     {
@@ -28,13 +28,13 @@ class KelembapanController extends Controller
         $kelembapan->save();
         if (request('gambar')) $kelembapan->handleUploadFoto();
 
-        return redirect('data_manager/admin/kelembapan');
+        return redirect('data_manager/admin/kelembapan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Kelembapan $kelembapan)
     {
         $kelembapan->delete();
         $kelembapan->handleDelete();
 
-        return redirect('data_manager/admin/kelembapan');
+        return redirect('data_manager/admin/kelembapan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

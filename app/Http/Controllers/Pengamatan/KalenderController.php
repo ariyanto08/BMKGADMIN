@@ -20,7 +20,7 @@ class KalenderController extends Controller
         $kalender->ket = request('ket');
         $kalender->save();
         $kalender->handleUploadFoto();
-        return redirect('data_manager/admin/kalender');
+        return redirect('data_manager/admin/kalender')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Kalender $kalender)
     {
@@ -28,13 +28,13 @@ class KalenderController extends Controller
         $kalender->save();
         if (request('gambar')) $kalender->handleUploadFoto();
 
-        return redirect('data_manager/admin/kalender');
+        return redirect('data_manager/admin/kalender')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Kalender $kalender)
     {
         $kalender->delete();
         $kalender->handleDelete();
 
-        return redirect('data_manager/admin/kalender');
+        return redirect('data_manager/admin/kalender')->with('danger', 'Data Berhasil Dihapus');
     }
 }

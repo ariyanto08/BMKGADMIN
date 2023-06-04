@@ -20,18 +20,18 @@ class ProsedurController extends Controller
         $prosedur->isi = request('isi');
         $prosedur->kategori = request('kategori');
         $prosedur->save();
-        return redirect('data_manager/admin/prosedur');
+        return redirect('data_manager/admin/prosedur')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Prosedur $prosedur)
     {
         $prosedur->isi = request('isi');
         $prosedur->kategori = request('kategori');
         $prosedur->save();
-        return redirect('data_manager/admin/prosedur');
+        return redirect('data_manager/admin/prosedur')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Prosedur $prosedur)
     {
         $prosedur->delete();
-        return redirect('data_manager/admin/prosedur');
+        return redirect('data_manager/admin/prosedur')->with('danger', 'Data Berhasil Dihapus');
     }
 }

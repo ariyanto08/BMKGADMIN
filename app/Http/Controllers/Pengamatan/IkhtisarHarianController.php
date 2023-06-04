@@ -21,7 +21,7 @@ class IkhtisarHarianController extends Controller
         $ikhtisarharian->ket = request('ket');
         $ikhtisarharian->save();
         $ikhtisarharian->handleUploadFoto();
-        return redirect('data_manager/admin/ikhtisarharian');
+        return redirect('data_manager/admin/ikhtisarharian')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(IkhtisarHarian $ikhtisarharian)
     {
@@ -29,13 +29,13 @@ class IkhtisarHarianController extends Controller
         $ikhtisarharian->save();
         if (request('gambar')) $ikhtisarharian->handleUploadFoto();
 
-        return redirect('data_manager/admin/ikhtisarharian');
+        return redirect('data_manager/admin/ikhtisarharian')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(IkhtisarHarian $ikhtisarharian)
     {
         $ikhtisarharian->delete();
         $ikhtisarharian->handleDelete();
 
-        return redirect('data_manager/admin/ikhtisarharian');
+        return redirect('data_manager/admin/ikhtisarharian')->with('danger', 'Data Berhasil Dihapus');
     }
 }

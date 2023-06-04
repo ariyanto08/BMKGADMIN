@@ -22,7 +22,7 @@ class PelayananController extends Controller
         $pelayanan->kategori = request('kategori');
         $pelayanan->save();
         $pelayanan->handleUploadPdf();
-        return redirect('data_manager/admin/pelayanan');
+        return redirect('data_manager/admin/pelayanan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Pelayanan $pelayanan)
     {
@@ -30,12 +30,12 @@ class PelayananController extends Controller
         $pelayanan->kategori = request('kategori');
         $pelayanan->save();
         if (request('file')) $pelayanan->handleUploadPdf();
-        return redirect('data_manager/admin/pelayanan');
+        return redirect('data_manager/admin/pelayanan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Pelayanan $pelayanan)
     {
         $pelayanan->delete();
         $pelayanan->handleDelete();
-        return redirect('data_manager/admin/pelayanan');
+        return redirect('data_manager/admin/pelayanan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

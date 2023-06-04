@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Pengamatan;
 
 use App\Http\Controllers\Controller;
 use App\Models\Suhu;
-use Illuminate\Http\Request;
 
 class SuhuController extends Controller
 {
@@ -21,7 +20,7 @@ class SuhuController extends Controller
         $suhu->ket = request('ket');
         $suhu->save();
         $suhu->handleUploadFoto();
-        return redirect('data_manager/admin/suhu');
+        return redirect('data_manager/admin/suhu')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Suhu $suhu)
     {
@@ -29,13 +28,13 @@ class SuhuController extends Controller
         $suhu->save();
         if (request('gambar')) $suhu->handleUploadFoto();
 
-        return redirect('data_manager/admin/suhu');
+        return redirect('data_manager/admin/suhu')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Suhu $suhu)
     {
         $suhu->delete();
         $suhu->handleDelete();
 
-        return redirect('data_manager/admin/suhu');
+        return redirect('data_manager/admin/suhu')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,7 +20,7 @@
                                         <th class="checkbox-column text-center"> No </th>
                                         <th>Foto</th>
                                         <th>Nama Pegawai</th>
-                                        <th>Ketegori</th>
+                                        <th>Kategori</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>

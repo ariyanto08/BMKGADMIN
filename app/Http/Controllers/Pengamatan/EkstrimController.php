@@ -20,7 +20,7 @@ class EkstrimController extends Controller
         $ekstrim->ket = request('ket');
         $ekstrim->save();
         $ekstrim->handleUploadFoto();
-        return redirect('data_manager/admin/ekstrim');
+        return redirect('data_manager/admin/ekstrim')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Ekstrim $ekstrim)
     {
@@ -28,13 +28,13 @@ class EkstrimController extends Controller
         $ekstrim->save();
         if (request('gambar')) $ekstrim->handleUploadFoto();
 
-        return redirect('data_manager/admin/ekstrim');
+        return redirect('data_manager/admin/ekstrim')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Ekstrim $ekstrim)
     {
         $ekstrim->delete();
         $ekstrim->handleDelete();
 
-        return redirect('data_manager/admin/ekstrim');
+        return redirect('data_manager/admin/ekstrim')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,7 +20,7 @@ class RangkumanController extends Controller
         $rangkuman->ket = request('ket');
         $rangkuman->save();
         $rangkuman->handleUploadFoto();
-        return redirect('data_manager/admin/rangkuman');
+        return redirect('data_manager/admin/rangkuman')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Rangkuman $rangkuman)
     {
@@ -28,13 +28,13 @@ class RangkumanController extends Controller
         $rangkuman->save();
         if (request('gambar')) $rangkuman->handleUploadFoto();
 
-        return redirect('data_manager/admin/rangkuman');
+        return redirect('data_manager/admin/rangkuman')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Rangkuman $rangkuman)
     {
         $rangkuman->delete();
         $rangkuman->handleDelete();
 
-        return redirect('data_manager/admin/rangkuman');
+        return redirect('data_manager/admin/rangkuman')->with('danger', 'Data Berhasil Dihapus');
     }
 }

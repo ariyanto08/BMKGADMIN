@@ -20,19 +20,19 @@ class ArtikelController extends Controller
         $artikel->ket = request('ket');
         $artikel->save();
         $artikel->handleUploadPdf();
-        return redirect('data_manager/admin/artikel');
+        return redirect('data_manager/admin/artikel')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Artikel $artikel)
     {
         $artikel->ket = request('ket');
         $artikel->save();
         if (request('file')) $artikel->handleUploadPdf();
-        return redirect('data_manager/admin/artikel');
+        return redirect('data_manager/admin/artikel')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Artikel $artikel)
     {
         $artikel->delete();
         $artikel->handleDelete();
-        return redirect('data_manager/admin/artikel');
+        return redirect('data_manager/admin/artikel')->with('danger', 'Data Berhasil Dihapus');
     }
 }

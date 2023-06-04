@@ -19,17 +19,17 @@ class InfoLayananController extends Controller
         $infolayanan = new InfoLayanan();
         $infolayanan->isi = request('isi');
         $infolayanan->save();
-        return redirect('data_manager/admin/infolayanan');
+        return redirect('data_manager/admin/infolayanan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(InfoLayanan $infolayanan)
     {
         $infolayanan->isi = request('isi');
         $infolayanan->save();
-        return redirect('data_manager/admin/infolayanan');
+        return redirect('data_manager/admin/infolayanan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(InfoLayanan $infolayanan)
     {
         $infolayanan->delete();
-        return redirect('data_manager/admin/infolayanan');
+        return redirect('data_manager/admin/infolayanan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

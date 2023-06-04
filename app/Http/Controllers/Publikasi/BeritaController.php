@@ -21,7 +21,7 @@ class BeritaController extends Controller
         $berita->deskripsi = request('deskripsi');
         $berita->save();
         $berita->handleUploadFoto();
-        return redirect('data_manager/admin/berita');
+        return redirect('data_manager/admin/berita')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Berita $berita)
     {
@@ -29,13 +29,13 @@ class BeritaController extends Controller
         $berita->deskripsi = request('deskripsi');
         $berita->save();
         if (request('gambar')) $berita->handleUploadFoto();
-        return redirect('data_manager/admin/berita');
+        return redirect('data_manager/admin/berita')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Berita $berita)
     {
         $berita->delete();
         $berita->handleDelete();
 
-        return redirect('data_manager/admin/berita');
+        return redirect('data_manager/admin/berita')->with('danger', 'Data Berhasil Dihapus');
     }
 }

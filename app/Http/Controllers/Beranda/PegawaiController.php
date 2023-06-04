@@ -21,7 +21,7 @@ class PegawaiController extends Controller
         $pegawai->kategori = request('kategori');
         $pegawai->save();
         $pegawai->handleUploadFoto();
-        return redirect('data_manager/admin/pegawai');
+        return redirect('data_manager/admin/pegawai')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Pegawai $pegawai)
     {
@@ -30,13 +30,13 @@ class PegawaiController extends Controller
         $pegawai->save();
         if (request('foto')) $pegawai->handleUploadFoto();
 
-        return redirect('data_manager/admin/pegawai');
+        return redirect('data_manager/admin/pegawai')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Pegawai $pegawai)
     {
         $pegawai->delete();
         $pegawai->handleDelete();
 
-        return redirect('data_manager/admin/pegawai');
+        return redirect('data_manager/admin/pegawai')->with('danger', 'Data Berhasil Dihapus');
     }
 }

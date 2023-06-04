@@ -20,19 +20,19 @@ class PotensiController extends Controller
         $potensi->ket = request('ket');
         $potensi->save();
         $potensi->handleUploadPdf();
-        return redirect('data_manager/admin/potensi');
+        return redirect('data_manager/admin/potensi')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Potensi $potensi)
     {
         $potensi->ket = request('ket');
         $potensi->save();
         if (request('file')) $potensi->handleUploadPdf();
-        return redirect('data_manager/admin/potensi');
+        return redirect('data_manager/admin/potensi')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Potensi $potensi)
     {
         $potensi->delete();
         $potensi->handleDelete();
-        return redirect('data_manager/admin/potensi');
+        return redirect('data_manager/admin/potensi')->with('danger', 'Data Berhasil Dihapus');
     }
 }

@@ -20,7 +20,7 @@ class AnginController extends Controller
         $angin->ket = request('ket');
         $angin->save();
         $angin->handleUploadFoto();
-        return redirect('data_manager/admin/angin');
+        return redirect('data_manager/admin/angin')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Angin $angin)
     {
@@ -28,13 +28,13 @@ class AnginController extends Controller
         $angin->save();
         if (request('gambar')) $angin->handleUploadFoto();
 
-        return redirect('data_manager/admin/angin');
+        return redirect('data_manager/admin/angin')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Angin $angin)
     {
         $angin->delete();
         $angin->handleDelete();
 
-        return redirect('data_manager/admin/angin');
+        return redirect('data_manager/admin/angin')->with('danger', 'Data Berhasil Dihapus');
     }
 }

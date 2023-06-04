@@ -20,7 +20,7 @@ class PasangSurutController extends Controller
         $pasangsurut->ket = request('ket');
         $pasangsurut->save();
         $pasangsurut->handleUploadFoto();
-        return redirect('data_manager/admin/pasangsurut');
+        return redirect('data_manager/admin/pasangsurut')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(PasangSurut $pasangsurut)
     {
@@ -28,13 +28,13 @@ class PasangSurutController extends Controller
         $pasangsurut->save();
         if (request('gambar')) $pasangsurut->handleUploadFoto();
 
-        return redirect('data_manager/admin/pasangsurut');
+        return redirect('data_manager/admin/pasangsurut')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(PasangSurut $pasangsurut)
     {
         $pasangsurut->delete();
         $pasangsurut->handleDelete();
 
-        return redirect('data_manager/admin/pasangsurut');
+        return redirect('data_manager/admin/pasangsurut')->with('danger', 'Data Berhasil Dihapus');
     }
 }

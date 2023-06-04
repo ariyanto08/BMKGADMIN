@@ -20,7 +20,7 @@ class ProspelController extends Controller
         $prospel->ket = request('ket');
         $prospel->save();
         $prospel->handleUploadGambar();
-        return redirect('data_manager/admin/prospel');
+        return redirect('data_manager/admin/prospel')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Prospel $prospel)
     {
@@ -28,13 +28,13 @@ class ProspelController extends Controller
         $prospel->save();
         if (request('gambar')) $prospel->handleUploadGambar();
 
-        return redirect('data_manager/admin/prospel');
+        return redirect('data_manager/admin/prospel')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Prospel $prospel)
     {
         $prospel->delete();
         $prospel->handleDelete();
 
-        return redirect('data_manager/admin/prospel');
+        return redirect('data_manager/admin/prospel')->with('danger', 'Data Berhasil Dihapus');
     }
 }

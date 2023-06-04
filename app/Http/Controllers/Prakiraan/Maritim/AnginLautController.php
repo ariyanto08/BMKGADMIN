@@ -23,7 +23,7 @@ class AnginLautController extends Controller
         $anginlaut->jam = request('jam');
         $anginlaut->save();
         $anginlaut->handleUploadFoto();
-        return redirect('data_manager/admin/kecepatan');
+        return redirect('data_manager/admin/kecepatan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(AnginLaut $anginlaut)
     {
@@ -33,13 +33,13 @@ class AnginLautController extends Controller
         $anginlaut->jam = request('jam');
         $anginlaut->save();
         if (request('gambar')) $anginlaut->handleUploadFoto();
-        return redirect('data_manager/admin/kecepatan');
+        return redirect('data_manager/admin/kecepatan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(AnginLaut $anginlaut)
     {
         $anginlaut->delete();
         $anginlaut->handleDelete();
 
-        return redirect('data_manager/admin/kecepatan');
+        return redirect('data_manager/admin/kecepatan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

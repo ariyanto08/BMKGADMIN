@@ -28,7 +28,7 @@ class PelabuhanController extends Controller
         $pelabuhan->visibility = request('visibility');
         $pelabuhan->save();
         $pelabuhan->handleUploadFoto();
-        return redirect('data_manager/admin/pelabuhan');
+        return redirect('data_manager/admin/pelabuhan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Pelabuhan $pelabuhan)
     {
@@ -42,13 +42,13 @@ class PelabuhanController extends Controller
         $pelabuhan->save();
         if (request('gambar')) $pelabuhan->handleUploadFoto();
 
-        return redirect('data_manager/admin/pelabuhan');
+        return redirect('data_manager/admin/pelabuhan')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Pelabuhan $pelabuhan)
     {
         $pelabuhan->delete();
         $pelabuhan->handleDelete();
 
-        return redirect('data_manager/admin/pelabuhan');
+        return redirect('data_manager/admin/pelabuhan')->with('danger', 'Data Berhasil Dihapus');
     }
 }

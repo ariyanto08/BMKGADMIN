@@ -20,19 +20,19 @@ class AcsController extends Controller
         $acs->ket = request('ket');
         $acs->save();
         $acs->handleUploadPdf();
-        return redirect('data_manager/admin/acs');
+        return redirect('data_manager/admin/acs')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Acs $acs)
     {
         $acs->ket = request('ket');
         $acs->save();
         if (request('file')) $acs->handleUploadPdf();
-        return redirect('data_manager/admin/acs');
+        return redirect('data_manager/admin/acs')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Acs $acs)
     {
         $acs->delete();
         $acs->handleDelete();
-        return redirect('data_manager/admin/acs');
+        return redirect('data_manager/admin/acs')->with('danger', 'Data Berhasil Dihapus');
     }
 }

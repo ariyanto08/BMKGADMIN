@@ -25,7 +25,6 @@
         <div class="shadow-bottom"></div>
 
         <ul class="list-unstyled menu-categories" id="accordionExample">
-
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Beranda</div>
             <li class="menu">
                 <a href="pegawai" data-active="{{ checkRouteTrue('data_manager/admin/pegawai') }}" aria-expanded="false"
@@ -281,7 +280,7 @@
                 <a href="berita" data-active="{{ checkRouteTrue('data_manager/admin/berita') }}"
                     class="dropdown-toggle">
                     <div class="">
-                        <i data-feather="upload-cloud"></i>
+                        <i data-feather="map"></i>
                         <span>Berita</span>
                     </div>
                 </a>
@@ -290,7 +289,7 @@
                 <a href="artikel" data-active="{{ checkRouteTrue('data_manager/admin/artikel') }}"
                     class="dropdown-toggle">
                     <div class="">
-                        <i data-feather="upload-cloud"></i>
+                        <i data-feather="globe"></i>
                         <span>Artikel</span>
                     </div>
                 </a>
@@ -299,7 +298,7 @@
                 <a href="buletin" data-active="{{ checkRouteTrue('data_manager/admin/buletin') }}"
                     class="dropdown-toggle">
                     <div class="">
-                        <i data-feather="upload-cloud"></i>
+                        <i data-feather="disc"></i>
                         <span>Buletin</span>
                     </div>
                 </a>
@@ -308,7 +307,7 @@
                 <a href="edukasi" data-active="{{ checkRouteTrue('data_manager/admin/edukasi') }}"
                     class="dropdown-toggle">
                     <div class="">
-                        <i data-feather="upload-cloud"></i>
+                        <i data-feather="book-open"></i>
                         <span>Edukasi Cuaca</span>
                     </div>
                 </a>
@@ -317,7 +316,7 @@
                 <a href="transparansi" data-active="{{ checkRouteTrue('data_manager/admin/transparansi') }}"
                     class="dropdown-toggle">
                     <div class="">
-                        <i data-feather="upload-cloud"></i>
+                        <i data-feather="square"></i>
                         <span>Transparansi Kerja</span>
                     </div>
                 </a>
@@ -329,6 +328,17 @@
                     <div class="">
                         <i data-feather="image"></i>
                         <span>Foto</span>
+                    </div>
+                </a>
+            </li>
+
+            <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Pengguna</div>
+            <li class="menu">
+                <a href="user" data-active="{{ checkRouteTrue('data_manager/admin/user') }}" aria-expanded="false"
+                    class="dropdown-toggle">
+                    <div class="">
+                        <i data-feather="users"></i>
+                        <span>Admin</span>
                     </div>
                 </a>
             </li>

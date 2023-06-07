@@ -30,6 +30,8 @@ use App\Http\Controllers\LayananPublik\PelayananController;
 use App\Http\Controllers\Prakiraan\Cuaca\PotensiController;
 use App\Http\Controllers\LayananPublik\InfoLayananController;
 use App\Http\Controllers\Pengamatan\IkhtisarHarianController;
+use App\Http\Controllers\Prakiraan\Cuaca\HarianKtpController;
+use App\Http\Controllers\LayananPublik\PelayananDataController;
 use App\Http\Controllers\Prakiraan\Cuaca\MingguanKtpController;
 use App\Http\Controllers\Prakiraan\Maritim\AnginLautController;
 use App\Http\Controllers\Prakiraan\Maritim\PelabuhanController;
@@ -109,6 +111,14 @@ Route::prefix('data_manager')->middleware('auth')->group(function () {
         Route::resource('pelayanan', PelayananController::class);
         Route::resource('prosedur', ProsedurController::class);
         Route::resource('user', UserController::class);
+
+        Route::get('pelayanandata', [PelayananDataController::class, 'index']);
+        Route::delete('pelayanandata/{pelayanadata}', [PelayananDataController::class, 'destroy']);
+
+        Route::get('harianktp', [HarianKtpController::class, 'index']);
+        Route::post('harianktp', HarianKtpController::class)->name('harianktp');
+        Route::delete('harianktp/{harianktp}', [HarianKtpController::class, 'destroy']);
+
 
     });
 });

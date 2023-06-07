@@ -68,10 +68,7 @@
                 <ul class="collapse submenu list-unstyled {{ checkRouteShow('data_manager/admin/harianktp') }} {{ checkRouteShow('data_manager/admin/hariankku') }} {{ checkRouteShow('data_manager/admin/mingguan') }} {{ checkRouteShow('data_manager/admin/angin') }} {{ checkRouteShow('data_manager/admin/potensi') }}"
                     id="cuaca" data-parent="#accordionExample">
                     <li class="{{ checkRouteActive('data_manager/admin/harianktp') }}">
-                        <a href="harianktp"> Harian Ketapang </a>
-                    </li>
-                    <li class="{{ checkRouteActive('data_manager/admin/hariankku') }}">
-                        <a href="hariankku"> Harian Kayong Utara </a>
+                        <a href="harianktp"> Harian Ktp-KKU </a>
                     </li>
                     <li class="{{ checkRouteActive('data_manager/admin/mingguan') }}">
                         <a href="mingguan"> Mingguan Ketapang </a>
@@ -247,7 +244,7 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="pelayanan_data" data-active="{{ checkRouteTrue('data_manager/admin/pelayanan_data') }}" class="dropdown-toggle">
+                <a href="pelayanandata" data-active="{{ checkRouteTrue('data_manager/admin/pelayanandata') }}" class="dropdown-toggle">
                     <div class="">
                         <i data-feather="tool"></i>
                         <span>Pelayanan Data Informasi</span>

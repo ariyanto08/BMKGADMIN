@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Login | SISTAMET </title>
-    <link rel="icon" type="image/x-icon" href="{{ url('public') }}/assets/img/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ url('public') }}/assets/img/logobmkghitam.png" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link href="{{ url('public') }}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,8 @@
             <div class="form-form-wrap">
                 <div class="form-container">
                     <div class="form-content">
-
+                        <h1 class="">Log In to <a href="index.html"><span class="brand-name">BMKG Ketapang</span></a></h1>
+                        <p class="signup-link">Silahkan</p>
                         <x-template.notif />
                         <form class="text-left" action="{{ url('login') }}" method="post">
                             @csrf
@@ -47,9 +48,10 @@
                                         <button type="submit" class="btn btn-primary" value="">Log In</button>
                                     </div>
                                 </div>
+
                             </div>
                         </form>
-                        <p class="terms-conditions">© 2019 All Rights Reserved. <a href="index.html">CORK</a> is a product of Designreset. <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.</p>
+                        <p class="terms-conditions"><a href="index.html"></a><a href="javascript:void(0);"></a>, <a href="javascript:void(0);"></a><a href="javascript:void(0);"></a>.</p>
 
                     </div>
                 </div>
@@ -57,7 +59,7 @@
         </div>
         <div class="form-image">
             <div class="l-image">
-                <img src="{{url('public')}}/assets/img/logobmkg.png">
+                <img src="{{url('public')}}/assets/img/logobmkghitam.png" class="mt-5 ml-5">
             </div>
         </div>
     </div>

@@ -75,7 +75,7 @@
                     <form action="{{ url('data_manager/admin/pegawai') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <input type="file" class="form-control" name="foto">
+                            <input type="file" class="form-control" name="foto" accept="image/jpg,image/png,image/jpeg">
                         </div>
                         <div class="form-group">
                             <input id="nama" type="text" name="nama" placeholder="Nama Lengkap"

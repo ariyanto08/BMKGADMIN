@@ -72,9 +72,10 @@
                         <div class="form-group">
                             <select class="form-control" name="kategori" required>
                                 <option>--Pilih Kategori--</option>
-                                <option value="Bank">Bank</option>
+                                <option value="Teller Bank">Teller Bank</option>
                                 <option value="ATM">ATM</option>
                                 <option value="Mbanking">Mbanking</option>
+                                <option value="E-Commerce">E-Commerce</option>
                             </select>
                         </div>
                         <label>Isi</label>
@@ -114,9 +115,10 @@
                             <div class="form-group">
                                 <select class="form-control" name="kategori" required>
                                     <option>{{$prosedur->kategori}}</option>
-                                    <option value="Bank">Bank</option>
+                                    <option value="Teller Bank">Teller Bank</option>
                                     <option value="ATM">ATM</option>
                                     <option value="Mbanking">Mbanking</option>
+                                    <option value="E-Commerce">E-Commerce</option>
                                 </select>
                             </div>
                             <label>Isi</label>

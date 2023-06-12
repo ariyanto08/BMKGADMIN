@@ -17,13 +17,23 @@ class InfoLayananController extends Controller
     }
     function store(){
         $infolayanan = new InfoLayanan();
+        $infolayanan->bab = request('bab');
+        $infolayanan->sub_bab = request('sub_bab');
         $infolayanan->isi = request('isi');
+        $infolayanan->sub_isi = request('sub_isi');
+        $infolayanan->satuan = request('satuan');
+        $infolayanan->tarif = request('tarif');
         $infolayanan->save();
         return redirect('data_manager/admin/infolayanan')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(InfoLayanan $infolayanan)
     {
+        $infolayanan->bab = request('bab');
+        $infolayanan->sub_bab = request('sub_bab');
         $infolayanan->isi = request('isi');
+        $infolayanan->sub_isi = request('sub_isi');
+        $infolayanan->satuan = request('satuan');
+        $infolayanan->tarif = request('tarif');
         $infolayanan->save();
         return redirect('data_manager/admin/infolayanan')->with('warning', 'Data Berhasil Diedit');
     }

@@ -18,6 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th class="checkbox-column text-center"> No </th>
+                                        <th>Gambar</th>
                                         <th>Keterangan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -26,6 +27,14 @@
                                     @foreach ($list_edukasi as $edukasi)
                                         <tr>
                                             <td class="checkbox-column text-center"> {{ $loop->iteration }} </td>
+                                            <td>
+                                                <div class="avatar avatar-xl">
+                                                    <img alt="avatar" src="{{ url("public/$edukasi->file") }}"
+                                                        data-toggle="modal"
+                                                        data-target="#ModalShow{{ $edukasi->id }}"
+                                                        class="rounded" />
+                                                </div>
+                                            </td>
                                             <td>{{ $edukasi->ket }}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
@@ -71,9 +80,10 @@
                             <input id="nama" type="text" name="ket" placeholder="Keterangan"
                                 class="form-control" required>
                         </div>
-                        <label>PDF</label>
+                        <label>Gambar</label>
                         <div class="form-group">
-                            <input type="file" class="form-control" name="file" accept="application/pdf">
+                            <input type="file" class="form-control" name="file"
+                                accept="image/jpeg,image/png,image/jpg">
                         </div>
                         <input type="submit" class="mt-4 btn btn-primary float-right">
                     </form>
@@ -112,10 +122,10 @@
                                         <input id="nama" type="text" name="ket" placeholder="Keterangan"
                                             class="form-control" value="{{ $edukasi->ket }}">
                                     </div>
-                                    <label>PDF</label>
+                                    <label>Gambar</label>
                                     <div class="form-group">
                                         <input type="file" class="form-control" name="file"
-                                            accept="application/pdf">
+                                            accept="image/jpeg,image/png,image/jpg">
                                     </div>
                                 </div>
                             </div>
@@ -129,18 +139,27 @@
 
     <!-- Modal Show -->
     @foreach ($list_edukasi as $edukasi)
-        <div class="modal fade" id="ModalSlide{{ $edukasi->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
+        <div class="modal fade" id="ModalShow{{ $edukasi->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalShowTitle{{ $edukasi->id }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title align-right" id="exampleModalLabel">{{ $edukasi->ket }}</h5>
+                        <h5 class="modal-title" id="ModalShowTitle{{ $edukasi->id }}">{{ $edukasi->ket }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
                     </div>
                     <div class="modal-body">
-                        <embed src="{{ url("public/$edukasi->file") }}" width="100%" height="900">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        <div class="row">
+                            <div class="">
+                                <img src="{{ url("public/$edukasi->file") }}" style="max-width:100%;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

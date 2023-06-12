@@ -15,7 +15,7 @@ class Potensi extends Model
         if (request()->hasFile('file')) {
             $file = request()->file('file');
             $destination = "pdf/potensi";
-            $filename = $file->getClientOriginalName();
+            $filename = $file->getClientOriginalExtension();
             $url =  $file->storeAs($destination, $filename);
             $this->file = "" . $url;
             $this->save();

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title> {{ $title }} | SISTAMET </title>
+    <title> {{ $title }} | STASIUN METEOROLOGI KELAS III RAOES KETAPANG </title>
     <link rel="icon" type="image/x-icon" href="{{ url('public') }}/assets/img/logobmkghitam.png" />
     <link href="{{ url('public') }}/assets/css/loader.css" rel="stylesheet" type="text/css" />
     <script src="{{ url('public') }}/assets/js/loader.js"></script>
@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/editors/quill/quill.snow.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link href="{{ url('public') }}/assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
+
 
     <style>
         .layout-px-spacing {
@@ -204,6 +206,26 @@
         var ss = $(".basic").select2({
             tags: true,
         });
+    </script>
+      <script type="text/javascript">
+        window.onload = function() { jam(); }
+
+        function jam() {
+            var e = document.getElementById('jam'),
+            d = new Date(), h, m, s, t;
+            h = d.getHours();
+            m = set(d.getMinutes());
+            s = set(d.getSeconds());
+
+            e.innerHTML = h +':'+ m +':'+ s;
+
+            setTimeout('jam()', 1000);
+        }
+
+        function set(e) {
+            e = e < 10 ? '0'+ e : e;
+            return e;
+        }
     </script>
 </body>
 

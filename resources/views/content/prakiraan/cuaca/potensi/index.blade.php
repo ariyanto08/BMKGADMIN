@@ -31,10 +31,6 @@
                                                 <div class="form-group">
                                                     <x-template.button.show dto="modal"
                                                         dta="#ModalSlide{{ $potensi->id }}" url="" />
-                                                        {{-- <div class="btn-group">
-                                                            <a href="{{ url('data_manager/admin/potensi', $potensi->id) }}" class="btn btn-info"
-                                                                title="Show"><i class="bx bx-detail"></i></a>
-                                                        </div> --}}
                                                     <x-template.button.edit dto="modal"
                                                         dta="#editdata{{ $potensi->id }}" />
                                                     <x-template.button.delete id="{{ $potensi->id }}" />
@@ -71,12 +67,14 @@
                     <form action="{{ url('data_manager/admin/potensi') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+                        <label>Keterangan</label>
                         <div class="form-group">
                             <input id="nama" type="text" name="ket" placeholder="Keterangan"
                                 class="form-control" required>
                         </div>
+                        <label>PDF</label>
                         <div class="form-group">
-                            <input type="file" class="form-control" name="file" accept="pdf">
+                            <input type="file" class="form-control" name="file" accept="application/pdf">
                         </div>
                         <input type="submit" class="mt-4 btn btn-primary float-right">
                     </form>
@@ -110,13 +108,15 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <label>Keterangan</label>
                                     <div class="form-group">
                                         <input id="nama" type="text" name="ket"
                                             placeholder="Keterangan" class="form-control"
                                             value="{{ $potensi->ket }}">
                                     </div>
+                                    <label>PDF</label>
                                     <div class="form-group">
-                                        <input type="file" class="form-control" name="file">
+                                        <input type="file" class="form-control" name="file" accept="application/pdf">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,6 @@
               <h5 class="modal-title align-right" id="exampleModalLabel">{{ $potensi->ket }}</h5>
             </div>
             <div class="modal-body">
-                {{-- <embed width="100%" height="900" src="https://web.meteo.bmkg.go.id//media/data/bmkg/mfy/PotensiHujanIndonesia.pdf"> --}}
                 <embed width="100%" height="900" src="{{ url("public/$potensi->file") }}">
             </div>
             <div class="modal-footer">

@@ -19,14 +19,14 @@ class EdukasiController extends Controller
         $edukasi = new Edukasi();
         $edukasi->ket = request('ket');
         $edukasi->save();
-        $edukasi->handleUploadPdf();
+        $edukasi->handleUploadFoto();
         return redirect('data_manager/admin/edukasi')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Edukasi $edukasi)
     {
         $edukasi->ket = request('ket');
         $edukasi->save();
-        if (request('file')) $edukasi->handleUploadPdf();
+        if (request('file')) $edukasi->handleUploadFoto();
         return redirect('data_manager/admin/edukasi')->with('warning', 'Data Berhasil Diedit');
     }
     function destroy(Edukasi $edukasi)

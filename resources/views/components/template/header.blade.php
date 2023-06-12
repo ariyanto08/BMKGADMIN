@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li class="nav-item theme-text">
-                <a href="index.html" class="nav-link"> SISTAMET </a>
+                <a href="index.html" class="nav-link"> STASIUN METEOROLOGI KELAS III RAOES KETAPANG </a>
             </li>
         </ul>
 

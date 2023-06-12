@@ -2,22 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use App\Models\Model;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Edukasi extends Model
 {
     use HasFactory;
     protected $table = 'publikasi_edukasi_cuaca';
 
-    function handleUploadPdf()
+    function handleUploadFoto()
     {
         $this->handleDelete();
         if (request()->hasFile('file')) {
-            $file = request()->file('file');
-            $destination = "pdf/edukasi";
-            $filename = $file->getClientOriginalName();
-            $url =  $file->storeAs($destination, $filename);
+            $gambar = request()->file('file');
+            $destination = "image/edukasi";
+            $randomStr = Str::random(5);
+            $filename = $this->id . "-" . time() . "-" . $randomStr . "." . $gambar->extension();
+            $url =  $gambar->storeAs($destination, $filename);
             $this->file = "" . $url;
             $this->save();
         }
@@ -26,9 +28,9 @@ class Edukasi extends Model
     function handleDelete()
     {
 
-        $file = $this->file;
-        if ($file) {
-            $path = public_path($file);
+        $gambar = $this->file;
+        if ($gambar) {
+            $path = public_path($gambar);
             if (file_exists($path)) {
                 unlink($path);
             }

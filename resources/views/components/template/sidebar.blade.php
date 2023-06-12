@@ -112,20 +112,11 @@
 
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Penerbangan</div>
             <li class="menu">
-                <a href="flightdoc" data-active="{{ checkRouteTrue('data_manager/admin/flightdoc') }}"
+                <a href="penerbangan" data-active="{{ checkRouteTrue('data_manager/admin/penerbangan') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="send"></i>
-                        <span>Flight Document</span>
-                    </div>
-                </a>
-            </li>
-            <li class="menu">
-                <a href="acs" data-active="{{ checkRouteTrue('data_manager/admin/acs') }}"
-                    class="dropdown-toggle">
-                    <div class="">
-                        <i data-feather="archive"></i>
-                        <span> Aerodrome Climatology Summary </span>
+                        <span>Penerbangan</span>
                     </div>
                 </a>
             </li>
@@ -274,6 +265,15 @@
 
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Publikasi</div>
             <li class="menu">
+                <a href="publikasi" data-active="{{ checkRouteTrue('data_manager/admin/publikasi') }}"
+                    class="dropdown-toggle">
+                    <div class="">
+                        <i data-feather="globe"></i>
+                        <span>Artikel Buletin</span>
+                    </div>
+                </a>
+            </li>
+            <li class="menu">
                 <a href="berita" data-active="{{ checkRouteTrue('data_manager/admin/berita') }}"
                     class="dropdown-toggle">
                     <div class="">
@@ -283,29 +283,11 @@
                 </a>
             </li>
             <li class="menu">
-                <a href="artikel" data-active="{{ checkRouteTrue('data_manager/admin/artikel') }}"
-                    class="dropdown-toggle">
-                    <div class="">
-                        <i data-feather="globe"></i>
-                        <span>Artikel</span>
-                    </div>
-                </a>
-            </li>
-            <li class="menu">
-                <a href="buletin" data-active="{{ checkRouteTrue('data_manager/admin/buletin') }}"
-                    class="dropdown-toggle">
-                    <div class="">
-                        <i data-feather="disc"></i>
-                        <span>Buletin</span>
-                    </div>
-                </a>
-            </li>
-            <li class="menu">
                 <a href="edukasi" data-active="{{ checkRouteTrue('data_manager/admin/edukasi') }}"
                     class="dropdown-toggle">
                     <div class="">
                         <i data-feather="book-open"></i>
-                        <span>Edukasi Cuaca</span>
+                        <span>Edukasi</span>
                     </div>
                 </a>
             </li>

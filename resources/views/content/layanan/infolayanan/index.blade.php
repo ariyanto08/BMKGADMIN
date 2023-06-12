@@ -18,7 +18,12 @@
                                 <thead>
                                     <tr>
                                         <th class="checkbox-column text-center"> No </th>
-                                        <th>Isi</th>
+                                        <th>Bab</th>
+                                        <th>Sub Bab</th>
+                                        <th>Jenis Informasi</th>
+                                        <th>Sub Jenis Informasi</th>
+                                        <th>Satuan</th>
+                                        <th>Tarif</th>
                                         <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
@@ -26,7 +31,12 @@
                                     @foreach ($list_infolayanan as $infolayanan)
                                         <tr>
                                             <td class="checkbox-column text-center"> {{ $loop->iteration }} </td>
-                                            <td>{!! nl2br($infolayanan->isi) !!}</td>
+                                            <td>{{$infolayanan->bab}}</td>
+                                            <td>{{$infolayanan->sub_bab}}</td>
+                                            <td>{{$infolayanan->isi}}</td>
+                                            <td>{{$infolayanan->sub_isi}}</td>
+                                            <td>{{$infolayanan->satuan}}</td>
+                                            <td>{{$infolayanan->tarif}}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
                                                     <x-template.button.edit dto="modal"
@@ -64,7 +74,49 @@
                 <div class="modal-body">
                     <form action="{{ url('data_manager/admin/infolayanan') }}" method="post">
                         @csrf
-                        <textarea name="isi" class="form-control summernote"></textarea>
+                        <label>Bab</label>
+                        <div class="form-group">
+                            <select class="form-control" name="bab">
+                                <option selected="selected">--Pilih--</option>
+                                <option value="I. INFORMASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">I. INFORMASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                                <option value="II. JASA KONSULTASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">II. JASA KONSULTASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                            </select>
+                        </div>
+
+                        <label>Sub Bab</label>
+                        <div class="form-group">
+                            <select class="form-control" name="sub_bab">
+                                <option selected="selected">--Pilih--</option>
+                                <option value="A. INFORMASI KHUSUS METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">A. INFORMASI KHUSUS METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                                <option value="B. INFORMASI KHUSUS METEOROLOGI , KLIMATOLGI DAN GEOFISIKA SESUAI PERMINTAAN">B. INFORMASI KHUSUS METEOROLOGI , KLIMATOLGI DAN GEOFISIKA SESUAI PERMINTAAN</option>
+                                <option value="A. JASA KONSULTASI METEOROLOGI">A. JASA KONSULTASI METEOROLOGI</option>
+                                <option value="B. JASA KONSULTASI KLIMATOLOGI">B. JASA KONSULTASI KLIMATOLOGI</option>
+                            </select>
+                        </div>
+
+                        <label>Jenis Informasi</label>
+                        <div class="form-group">
+                            <input type="text" name="isi" placeholder="Jenis Informasi"
+                                class="form-control" required>
+                        </div>
+
+                        <label>Sub Jenis Informasi</label>
+                        <div class="form-group">
+                            <input type="text" name="sub_isi" placeholder="Kosongkan Jika Tidak Ada Sub Jenis "
+                                class="form-control">
+                        </div>
+
+                        <label>Satuan</label>
+                        <div class="form-group">
+                            <input type="text" name="satuan" placeholder="Satuan"
+                                class="form-control" required>
+                        </div>
+
+                        <label>Tarif</label>
+                        <div class="form-group">
+                            <input type="text" name="tarif" placeholder="Tarif"
+                                class="form-control" required>
+                        </div>
                         <input type="submit" class="mt-4 btn btn-primary float-right">
                     </form>
                 </div>
@@ -90,11 +142,52 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('data_manager/admin/infolayanan', $infolayanan->id) }}" method="post"
-                            enctype="multipart/form-data">
+                        <form action="{{ url('data_manager/admin/infolayanan', $infolayanan->id) }}" method="post">
                             @csrf
                             @method('PUT')
-                            <textarea name="isi" class="form-control summernote">{!! nl2br($infolayanan->isi) !!}</textarea>
+                            <label>Bab</label>
+                        <div class="form-group">
+                            <select class="form-control" name="bab">
+                                <option selected="selected">{{$infolayanan->bab}}</option>
+                                <option value="I. INFORMASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">I. INFORMASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                                <option value="II. JASA KONSULTASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">II. JASA KONSULTASI METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                            </select>
+                        </div>
+
+                        <label>Sub Bab</label>
+                        <div class="form-group">
+                            <select class="form-control" name="sub_bab">
+                                <option selected="selected">{{$infolayanan->sub_bab}}</option>
+                                <option value="A. INFORMASI KHUSUS METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA">A. INFORMASI KHUSUS METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA</option>
+                                <option value="B. INFORMASI KHUSUS METEOROLOGI , KLIMATOLGI DAN GEOFISIKA SESUAI PERMINTAAN">B. INFORMASI KHUSUS METEOROLOGI , KLIMATOLGI DAN GEOFISIKA SESUAI PERMINTAAN</option>
+                                <option value="A. JASA KONSULTASI METEOROLOGI">A. JASA KONSULTASI METEOROLOGI</option>
+                                <option value="B. JASA KONSULTASI KLIMATOLOGI">B. JASA KONSULTASI KLIMATOLOGI</option>
+                            </select>
+                        </div>
+
+                        <label>Jenis Informasi</label>
+                        <div class="form-group">
+                            <input type="text" name="isi" placeholder="Jenis Informasi"
+                                class="form-control" value="{{$infolayanan->isi}}">
+                        </div>
+
+                        <label>Sub Jenis Informasi</label>
+                        <div class="form-group">
+                            <input type="text" name="sub_isi" placeholder="Kosongkan Jika Tidak Ada Sub Jenis "
+                                class="form-control" value="{{$infolayanan->sub_isi}}">
+                        </div>
+
+                        <label>Satuan</label>
+                        <div class="form-group">
+                            <input type="text" name="satuan" placeholder="Satuan"
+                                class="form-control" value="{{$infolayanan->satuan}}">
+                        </div>
+
+                        <label>Tarif</label>
+                        <div class="form-group">
+                            <input type="text" name="tarif" placeholder="Tarif"
+                                class="form-control" value="{{$infolayanan->tarif}}">
+                        </div>
                             <input type="submit" class="mt-4 btn btn-primary float-right">
                         </form>
                     </div>

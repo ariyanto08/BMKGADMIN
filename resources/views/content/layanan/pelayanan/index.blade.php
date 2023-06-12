@@ -31,8 +31,7 @@
                                             <td>{{ $pelayanan->kategori }}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
-                                                    <x-template.button.show dto="modal"
-                                                        dta="#ModalSlide{{ $pelayanan->id }}" url="" />
+                                                    <a href="{{ url("public/$pelayanan->file") }}"><button class="btn btn-info btn-tone bs-tooltip">Download</button></a>
                                                     <x-template.button.edit dto="modal"
                                                         dta="#editdata{{ $pelayanan->id }}" />
                                                     <x-template.button.delete id="{{ $pelayanan->id }}" />
@@ -141,26 +140,6 @@
                             </div>
                             <input type="submit" class="mt-4 btn btn-primary float-right">
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-    <!-- Modal Show -->
-    @foreach ($list_pelayanan as $pelayanan)
-        <div class="modal fade" id="ModalSlide{{ $pelayanan->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title align-right" id="exampleModalLabel">{{ $pelayanan->ket }}</h5>
-                    </div>
-                    <div class="modal-body">
-                        <embed src="{{ url("public/$pelayanan->file") }}" width="100%" height="900">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

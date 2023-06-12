@@ -5,12 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Galeri\FotoController;
 use App\Http\Controllers\Beranda\PegawaiController;
-use App\Http\Controllers\Penerbangan\AcsController;
 use App\Http\Controllers\Pengamatan\PetaController;
 use App\Http\Controllers\Pengamatan\SuhuController;
 use App\Http\Controllers\Publikasi\BeritaController;
-use App\Http\Controllers\Publikasi\ArtikelController;
-use App\Http\Controllers\Publikasi\BuletinController;
 use App\Http\Controllers\Publikasi\EdukasiController;
 use App\Http\Controllers\Pengamatan\EkstrimController;
 use App\Http\Controllers\Pengamatan\LapisanController;
@@ -19,14 +16,15 @@ use App\Http\Controllers\Pengamatan\AnalisisController;
 use App\Http\Controllers\Pengamatan\KalenderController;
 use App\Http\Controllers\Pengamatan\Stamet30Controller;
 use App\Http\Controllers\Pengamatan\WindroseController;
+use App\Http\Controllers\Publikasi\PublikasiController;
 use App\Http\Controllers\Pengamatan\RangkumanController;
 use App\Http\Controllers\LayananPublik\ProspelController;
-use App\Http\Controllers\Penerbangan\FlightDocController;
 use App\Http\Controllers\Pengamatan\KelembapanController;
 use App\Http\Controllers\Prakiraan\Cuaca\AnginController;
 use App\Http\Controllers\LayananPublik\ProsedurController;
 use App\Http\Controllers\Publikasi\TransparansiController;
 use App\Http\Controllers\LayananPublik\PelayananController;
+use App\Http\Controllers\Penerbangan\PenerbanganController;
 use App\Http\Controllers\Prakiraan\Cuaca\PotensiController;
 use App\Http\Controllers\LayananPublik\InfoLayananController;
 use App\Http\Controllers\Pengamatan\IkhtisarHarianController;
@@ -71,8 +69,7 @@ Route::prefix('data_manager')->middleware('auth')->group(function () {
         //end
         Route::resource('pasangsurut', PasangSurutController::class);
         Route::resource('pelabuhan', PelabuhanController::class);
-        Route::resource('flightdoc', FlightDocController::class);
-        Route::resource('acs', AcsController::class);
+        Route::resource('penerbangan', PenerbanganController::class);
         Route::resource('ikhtisarharian', IkhtisarHarianController::class);
         Route::resource('rangkuman', RangkumanController::class);
         Route::resource('ekstrim', EkstrimController::class);
@@ -95,7 +92,8 @@ Route::prefix('data_manager')->middleware('auth')->group(function () {
         Route::resource('prospel', ProspelController::class);
         Route::resource('foto', FotoController::class);
         Route::resource('infolayanan', InfoLayananController::class);
-        Route::resource('artikel', ArtikelController::class);
+        Route::resource('publikasi', PublikasiController::class);
+        Route::resource('edukasi', EdukasiController::class);
 
         Route::get('berita', [BeritaController::class, 'index']);
         Route::get('berita/create', [BeritaController::class, 'create']);
@@ -105,8 +103,6 @@ Route::prefix('data_manager')->middleware('auth')->group(function () {
         Route::put('berita/{berita}', [BeritaController::class, 'update']);
         Route::delete('berita/{berita}', [BeritaController::class, 'destroy']);
 
-        Route::resource('buletin', BuletinController::class);
-        Route::resource('edukasi', EdukasiController::class);
         Route::resource('transparansi', TransparansiController::class);
         Route::resource('pelayanan', PelayananController::class);
         Route::resource('prosedur', ProsedurController::class);

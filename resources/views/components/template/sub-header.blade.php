@@ -8,5 +8,6 @@
                 <line x1="3" y1="6" x2="21" y2="6"></line>
                 <line x1="3" y1="18" x2="21" y2="18"></line>
             </svg></a>
+            <span id="jam" style="font-size:24; color:#1b55e2;"></span>
     </header>
 </div>

@@ -17,6 +17,7 @@ class AnginLautController extends Controller
     }
     function store(){
         $anginlaut = new AnginLaut();
+        $anginlaut->kategori = request('kategori');
         $anginlaut->parameter = request('parameter');
         $anginlaut->tanggal = request('tanggal');
         $anginlaut->model_run = request('model_run');
@@ -27,6 +28,7 @@ class AnginLautController extends Controller
     }
     function update(AnginLaut $anginlaut)
     {
+        $anginlaut->kategori = request('kategori');
         $anginlaut->parameter = request('parameter');
         $anginlaut->tanggal = request('tanggal');
         $anginlaut->model_run = request('model_run');

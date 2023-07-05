@@ -52,7 +52,7 @@
             <div style="padding: 1rem 1rem 0.75rem; font-weight:bold;">Prakiraan</div>
             <li class="menu">
                 <a href="#cuaca" data-toggle="collapse" aria-expanded="false"
-                    data-active="{{ checkRouteTrue('data_manager/admin/harianktp') }}" class="dropdown-toggle">
+                    data-active="{{ checkRouteTrue('data_manager/admin/dini') }}" class="dropdown-toggle">
                     <div class="">
                         <i data-feather="cloud"></i>
                         <span>Cuaca</span>
@@ -65,8 +65,11 @@
                         </svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled {{ checkRouteShow('data_manager/admin/harianktp') }} {{ checkRouteShow('data_manager/admin/hariankku') }} {{ checkRouteShow('data_manager/admin/mingguan') }} {{ checkRouteShow('data_manager/admin/angin') }} {{ checkRouteShow('data_manager/admin/potensi') }}"
+                <ul class="collapse submenu list-unstyled {{ checkRouteShow('data_manager/admin/dini') }} {{ checkRouteShow('data_manager/admin/harianktp') }} {{ checkRouteShow('data_manager/admin/hariankku') }} {{ checkRouteShow('data_manager/admin/mingguan') }} {{ checkRouteShow('data_manager/admin/angin') }} {{ checkRouteShow('data_manager/admin/potensi') }}"
                     id="cuaca" data-parent="#accordionExample">
+                    <li class="{{ checkRouteActive('data_manager/admin/dini') }}">
+                        <a href="dini"> Peringatan Dini Cuaca </a>
+                    </li>
                     <li class="{{ checkRouteActive('data_manager/admin/harianktp') }}">
                         <a href="harianktp"> Harian Ktp-KKU </a>
                     </li>
@@ -75,9 +78,6 @@
                     </li>
                     <li class="{{ checkRouteActive('data_manager/admin/angin') }}">
                         <a href="angin"> Angin 3000 Feet </a>
-                    </li>
-                    <li class="{{ checkRouteActive('data_manager/admin/potensi') }}">
-                        <a href="potensi"> Potensi Hujan Indonesia </a>
                     </li>
                 </ul>
             </li>

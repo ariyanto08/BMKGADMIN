@@ -19,6 +19,7 @@
                                     <tr>
                                         <th class="checkbox-column text-center"> No </th>
                                         <th>Gambar</th>
+                                        <th>Kategori</th>
                                         <th>Keterangan</th>
                                         <th class="text-center">Action</th>
                                     </tr>
@@ -34,6 +35,7 @@
                                                         alt="avatar">
                                                 </div>
                                             </td>
+                                            <td>{{ $foto->kategori }}</td>
                                             <td>{{ $foto->ket }}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
@@ -70,13 +72,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ url('data_manager/admin/foto') }}" method="post"
-                        enctype="multipart/form-data">
+                    <form action="{{ url('data_manager/admin/foto') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Keterangan</label>
                             <input id="nama" type="text" name="ket" placeholder="Keterangan"
                                 class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Ketegori</label>
+                            <select name="kategori" class="form-control">
+                                <option selected>Pilih Kategori</option>
+                                <option value="Penghargaan">Penghargaan</option>
+                                <option value="Penerimaan Penghargaan">Penerimaan Penghargaan</option>
+                                <option value="Formetika">Formetika</option>
+                                <option value="Rekonsiliasi">Rekonsiliasi</option>
+                                <option value="Sosialisasi">Sosialisasi</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Gambar</label>
@@ -108,7 +120,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{ url('data_manager/admin/foto',$foto->id) }}" method="post"
+                        <form action="{{ url('data_manager/admin/foto', $foto->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -124,6 +136,17 @@
                                         <label>Keterangan</label>
                                         <input id="nama" type="text" name="ket" placeholder="Keterangan"
                                             class="form-control" value="{{ $foto->ket }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ketegori</label>
+                                        <select name="kategori" class="form-control">
+                                            <option selected>{{$foto->kategori}}</option>
+                                            <option value="Penghargaan">Penghargaan</option>
+                                            <option value="Penerimaan Penghargaan">Penerimaan Penghargaan</option>
+                                            <option value="Formetika">Formetika</option>
+                                            <option value="Rekonsiliasi">Rekonsiliasi</option>
+                                            <option value="Sosialisasi">Sosialisasi</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Gambar</label>
@@ -146,7 +169,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalShowTitle{{ $foto->id }}">Detail Gambar {{$foto->ket}} </h5>
+                        <h5 class="modal-title" id="ModalShowTitle{{ $foto->id }}">Detail Gambar
+                            {{ $foto->ket }} </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

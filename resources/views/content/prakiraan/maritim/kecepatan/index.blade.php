@@ -19,6 +19,7 @@
                                     <tr>
                                         <th class="checkbox-column text-center"> No </th>
                                         <th>Gambar</th>
+                                        <th>Kategori</th>
                                         <th>Parameter</th>
                                         <th>Tanggal</th>
                                         <th>Model Run</th>
@@ -37,6 +38,7 @@
                                                         class="rounded" alt="avatar">
                                                 </div>
                                             </td>
+                                            <td>{{ $anginlaut->kategori }}</td>
                                             <td>{{ $anginlaut->parameter }}</td>
                                             <td>{{ $anginlaut->tanggal }}</td>
                                             <td>{{ $anginlaut->model_run }}</td>
@@ -79,16 +81,34 @@
                     <form action="{{ url('data_manager/admin/kecepatan') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+                        <div class="form-group">
+                            <label>Ketegori</label>
+                            <select name="kategori" class="form-control">
+                                <option selected>Pilih Kategori</option>
+                                <option value="Angin">Angin</option>
+                                <option value="Gelombang">Gelombang</option>
+                            </select>
+                        </div>
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="form-group">
                                     <label>Parameter</label>
-                                    <input type="text" name="parameter" placeholder="Parameter" class="form-control"
-                                        required>
+                                    <select name="parameter" class="form-control">
+                                        <option selected>Pilih Parameter</option>
+                                        <option disabled>Angin</option>
+                                        <option value="Wind Speed and Direction">Wind Speed and Direction</option>
+                                        <option value="wind Sea Height">wind Sea Height</option>
+                                        <option value="Wind Sea Period">Wind Sea Period</option>
+                                        <option disabled>Gelombang</option>
+                                        <option value="Significant Wave Height">Significant Wave Height</option>
+                                        <option value="Wave Mean Period">Wave Mean Period</option>
+                                        <option value="Primary Swell Height">Primary Swell Height</option>
+                                        <option value="Primary Swell Period">Primary Swell Period</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal</label>
-                                    <input type="text" name="tanggal" placeholder="dd month" class="form-control"
+                                    <input type="date" name="tanggal" class="form-control"
                                         required>
                                 </div>
                             </div>
@@ -100,8 +120,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Jam</label>
-                                    <input type="text" name="jam" placeholder="-- UTC" class="form-control"
-                                        required>
+                                    <select name="jam" class="form-control">
+                                        <option selected>Pilih Jam</option>
+                                        <option value="00 UTC">00 UTC</option>
+                                        <option value="03 UTC">03 UTC</option>
+                                        <option value="06 UTC">06 UTC</option>
+                                        <option value="09 UTC">09 UTC</option>
+                                        <option value="12 UTC">12 UTC</option>
+                                        <option value="15 UTC">15 UTC</option>
+                                        <option value="18 UTC">18 UTC</option>
+                                        <option value="21 UTC">21 UTC</option>
+                                        <option value="24 UTC">24 UTC</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -147,6 +177,14 @@
 
                                 <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
                                     <div class="form-group">
+                                        <label>Ketegori</label>
+                                        <select name="kategori" class="form-control">
+                                            <option selected>{{$anginlaut->kategori}}</option>
+                                            <option value="Angin">Angin</option>
+                                            <option value="Gelombang">Gelombang</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
                                         <input type="text" name="parameter" class="form-control"
                                             value="{{ $anginlaut->parameter }}">
                                     </div>
@@ -182,7 +220,8 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalShowTitle{{ $anginlaut->id }}">Detail Data {{$anginlaut->parameter}}</h5>
+                        <h5 class="modal-title" id="ModalShowTitle{{ $anginlaut->id }}">Detail Data
+                            {{ $anginlaut->parameter }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

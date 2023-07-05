@@ -18,6 +18,7 @@ class FotoController extends Controller
     function store(){
         $foto = new Foto();
         $foto->ket = request('ket');
+        $foto->kategori = request('kategori');
         $foto->save();
         $foto->handleUploadFoto();
         return redirect('data_manager/admin/foto')->with('success', 'Data Berhasil Ditambahkan');
@@ -25,6 +26,7 @@ class FotoController extends Controller
     function update(Foto $foto)
     {
         $foto->ket = request('ket');
+        $foto->kategori = request('kategori');
         $foto->save();
         if (request('gambar')) $foto->handleUploadFoto();
         return redirect('data_manager/admin/foto')->with('warning', 'Data Berhasil Diedit');

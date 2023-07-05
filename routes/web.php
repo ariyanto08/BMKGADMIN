@@ -12,6 +12,7 @@ use App\Http\Controllers\Publikasi\EdukasiController;
 use App\Http\Controllers\Pengamatan\EkstrimController;
 use App\Http\Controllers\Pengamatan\LapisanController;
 use App\Http\Controllers\Beranda\PenghargaanController;
+use App\Http\Controllers\Web\KontakController;
 use App\Http\Controllers\Pengamatan\AnalisisController;
 use App\Http\Controllers\Pengamatan\KalenderController;
 use App\Http\Controllers\Pengamatan\Stamet30Controller;
@@ -25,15 +26,19 @@ use App\Http\Controllers\LayananPublik\ProsedurController;
 use App\Http\Controllers\Publikasi\TransparansiController;
 use App\Http\Controllers\LayananPublik\PelayananController;
 use App\Http\Controllers\Penerbangan\PenerbanganController;
-use App\Http\Controllers\Prakiraan\Cuaca\PotensiController;
 use App\Http\Controllers\LayananPublik\InfoLayananController;
 use App\Http\Controllers\Pengamatan\IkhtisarHarianController;
 use App\Http\Controllers\Prakiraan\Cuaca\HarianKtpController;
 use App\Http\Controllers\LayananPublik\PelayananDataController;
+use App\Http\Controllers\Prakiraan\Cuaca\DiniController;
 use App\Http\Controllers\Prakiraan\Cuaca\MingguanKtpController;
 use App\Http\Controllers\Prakiraan\Maritim\AnginLautController;
 use App\Http\Controllers\Prakiraan\Maritim\PelabuhanController;
 use App\Http\Controllers\Prakiraan\Maritim\PasangSurutController;
+use App\Http\Controllers\Web\BerandaController;
+use App\Http\Controllers\Web\GaleriController;
+use App\Http\Controllers\Web\PrakiraanController;
+use App\Http\Controllers\Web\PublikasiWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,14 +55,14 @@ Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'loginproses']);
 Route::get('logout', [AuthController::class, 'logout']);
 
-
+//admin
 Route::prefix('data_manager')->middleware('auth')->group(function () {
     Route::prefix('admin')->middleware('auth')->group(function () {
         Route::resource('pegawai', PegawaiController::class);
         Route::resource('penghargaan', PenghargaanController::class);
         Route::resource('mingguan', MingguanKtpController::class);
         Route::resource('angin', AnginController::class);
-        Route::resource('potensi', PotensiController::class);
+        Route::resource('dini', DiniController::class);
         //start kecepatan
         Route::get('kecepatan', [AnginLautController::class, 'index']);
         Route::get('kecepatan/create', [AnginLautController::class, 'create']);
@@ -117,4 +122,33 @@ Route::prefix('data_manager')->middleware('auth')->group(function () {
 
 
     });
+
 });
+
+//front
+Route::get('beranda/profil-kantor', [BerandaController::class, 'showProfil']);
+Route::get('beranda/sejarah-kantor', [BerandaController::class, 'showSejarah']);
+Route::get('beranda/pegawai', [BerandaController::class, 'showPegawai']);
+Route::get('beranda/penghargaan', [BerandaController::class, 'showPenghargaan']);
+Route::get('prakiraan/cuaca/peringatan-dini-cuaca', [PrakiraanController::class, 'showDini']);
+Route::get('prakiraan/cuaca/prakiraan-harian-ketapang', [PrakiraanController::class, 'showKetapang']);
+Route::get('prakiraan/cuaca/prakiraan-harian-kayong-utara', [PrakiraanController::class, 'showKKU']);
+Route::get('prakiraan/cuaca/prakiraan-cuaca-berbasis-dampak', [PrakiraanController::class, 'showDampak']);
+Route::get('prakiraan/cuaca/prakiraan-mingguan-ketapang', [PrakiraanController::class, 'showMingguan']);
+Route::get('prakiraan/cuaca/potensi-hujan-indonesia', [PrakiraanController::class, 'showPotensi']);
+Route::get('prakiraan/cuaca/prakiraan-angin-3000-feet', [PrakiraanController::class, 'showAngin']);
+Route::get('prakiraan/cuaca/potensi-pertumbuhan-awan-hujan', [PrakiraanController::class, 'showAwan']);
+Route::get('prakiraan/cuaca/potensi-kemudahan-karhutla', [PrakiraanController::class, 'showKarhutla']);
+Route::get('prakiraan/iklim/prakiraan-curah-hujan-dasarian', [PrakiraanController::class, 'showDasarian']);
+Route::get('prakiraan/iklim/prakiraan-curah-hujan-bulanan', [PrakiraanController::class, 'showBulanan']);
+Route::get('prakiraan/iklim/prakiraan-sifat-hujan', [PrakiraanController::class, 'showSifat']);
+Route::get('prakiraan/iklim/prakiraan-musim', [PrakiraanController::class, 'showMusim']);
+Route::get('prakiraan/iklim/potensi-banjir-dasarian', [PrakiraanController::class, 'showBanjir']);
+Route::get('prakiraan/iklim/potensi-banjir-bulanan', [PrakiraanController::class, 'showBanjirBulanan']);
+Route::get('prakiraan/maritim/peringatan-dini-gelombang', [PrakiraanController::class, 'showDiniGelombang']);
+Route::get('prakiraan/maritim/prakiraan-tinggi-gelombang', [PrakiraanController::class, 'showTinggiGelombang']);
+Route::get('kontak',[KontakController::class,'showKontak']);
+Route::get('galeri/video',[GaleriController::class,'showVideo']);
+Route::get('galeri/foto',[GaleriController::class,'showFoto']);
+Route::get('publikasi/berita',[PublikasiWebController::class,'showBerita']);
+Route::get('berita/detail-berita/{berita}',[PublikasiWebController::class,'showDetailBerita']);

@@ -27,8 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/dropify/dropify.min.css">
     <link href="{{ url('public') }}/assets/css/components/custom-modal.css" rel="stylesheet" type="text/css" />
     <link href="{{ url('public') }}/assets/css/users/account-setting.css" rel="stylesheet" type="text/css" />
-    <link href="{{ url('public') }}/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet"
-        type="text/css" />
+    <link href="{{ url('public') }}/plugins/file-upload/file-upload-with-preview.min.css" rel="stylesheet" type="text/css"/>
     <link href="{{ url('public') }}/assets/css/components/cards/card.css" rel="stylesheet" type="text/css" />
     <link href="{{ url('public') }}/assets/css/angin.css" rel="stylesheet" type="text/css" />
     <link href="{{ url('public') }}/assets/css/elements/avatar.css" rel="stylesheet" type="text/css" />
@@ -36,14 +35,11 @@
     <link rel="stylesheet" type="text/css" href="{{ url('public') }}/plugins/editors/quill/quill.snow.css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <link href="{{ url('public') }}/assets/css/users/user-profile.css" rel="stylesheet" type="text/css" />
-
-
     <style>
         .layout-px-spacing {
             min-height: calc(100vh - 166px) !important;
         }
     </style>
-    @stack('style')
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>

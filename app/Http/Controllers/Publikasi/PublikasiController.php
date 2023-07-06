@@ -21,6 +21,7 @@ class PublikasiController extends Controller
         $publikasi->kategori = request('kategori');
         $publikasi->save();
         $publikasi->handleUploadPdf();
+        $publikasi->handleUploadGambar();
         return redirect('data_manager/admin/publikasi')->with('success', 'Data Berhasil Ditambahkan');
     }
     function update(Publikasi $publikasi)
@@ -28,6 +29,7 @@ class PublikasiController extends Controller
         $publikasi->ket = request('ket');
         $publikasi->kategori = request('kategori');
         $publikasi->save();
+        if (request('gambar')) $publikasi->handleUploadGambar();
         if (request('file')) $publikasi->handleUploadPdf();
         return redirect('data_manager/admin/publikasi')->with('warning', 'Data Berhasil Diedit');
     }

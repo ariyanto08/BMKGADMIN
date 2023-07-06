@@ -11,8 +11,8 @@
 @endpush
 <x-webase title="Detail Berita">
     @slot('breadcrumb')
-        <x-template-web.bread-crumb.bread bread="Publikasi" url="" />
-        <x-template-web.bread-crumb.crumb crumb="Berita" />
+        <x-template-web.bread-crumb.bread bread="Publikasi"/>
+        <x-template-web.bread-crumb.crumb crumb="Berita" url="{{url('publikasi/berita')}}"/>
         <x-template-web.bread-crumb.crumb crumb="Detail Berita" />
     @endslot
     <div class="sidebar-page-container">
@@ -63,7 +63,7 @@
                             <article class="post">
                                 <figure class="post-thumb"><img src="{{ url("public/$berita->gambar") }}" alt="">
                                 </figure>
-                                <h4><a href="#">{{$berita->judul}}</a></h4>
+                                <h4><a href="{{ url('berita/detail-berita', $berita->id) }}">{{$berita->judul}}</a></h4>
                                 <!--post-meta-->
                                 <ul class="post-meta">
                                     <li>{{$berita->created_at->format('d M Y')}}</li>

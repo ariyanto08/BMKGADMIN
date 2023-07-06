@@ -19,10 +19,10 @@
     }
 </style>
 @endpush
-<x-webase title="Berita">
+<x-webase title="Artikel">
     @slot('breadcrumb')
         <x-template-web.bread-crumb.bread bread="Publikasi" url="" />
-        <x-template-web.bread-crumb.crumb crumb="Berita" />
+        <x-template-web.bread-crumb.crumb crumb="Artikel" />
     @endslot
     <div class="sidebar-page-container">
         <div class="auto-container">
@@ -31,23 +31,22 @@
                 <!--Content Side-->
                 <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
                     <section class="news-outer">
-                        @foreach ($list_berita as $berita)
+
+                        @foreach ($list_artikel as $artikel)
                         <div class="news-style-two">
                             <div class="inner-box">
                                 <figure class="image">
-                                    <a href="{{ url('berita/detail-berita', $berita->id) }}"><img src="{{ url("public/$berita->gambar") }}" alt="" /></a>
+                                    <a href="{{ url('artikel/detail-artikel', $artikel->id) }}"><img src="{{ url("public/$artikel->gambar") }}" alt="" /></a>
 
                                     <div class="date">
-                                        {{$berita->created_at->format('d M')}} <span class="flaticon-gallery"></span>
+                                        {{$artikel->created_at->format('d M')}} <span class="flaticon-video-camera"></span>
                                     </div>
 
                                 </figure>
 
                                 <!--lower-content-->
                                 <div class="lower-content">
-                                    <h3><a href="{{ url('berita/detail-berita', $berita->id) }}">{{$berita->judul}}</a></h3>
-                                    <div class="text">{{substr($berita->deskripsi, 0, 250)}}...</div>
-                                    <a class="read-more" href="{{ url('berita/detail-berita', $berita->id) }}">READ MORE <span class="fa fa-angle-double-right"></span></a>
+                                    <h3><a href="{{ url('artikel/detail-artikel', $artikel->id) }}">{{$artikel->ket}}</a></h3>
                                 </div>
 
                             </div>
@@ -67,26 +66,28 @@
 				<!--Sidebar-->
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <aside class="sidebar news-sidebar">
-                        <!-- Recent Posts -->
-                        <div class="sidebar-widget recent-posts wow fadeInUp" data-wow-delay="0ms"
-                            data-wow-duration="1500ms">
+                    	<!-- Recent Posts -->
+                        <div class="sidebar-widget recent-posts wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 
-                            <div class="sec-title-seven">
-                                <h2>Berita Lainnya</h2>
-                            </div>
-                            @foreach ($recent_berita as $berita)
+                            <div class="sec-title-seven"><h2>Artikel Lainnya</h2></div>
+
+                            @foreach ($recent_artikel as $artikel)
                             <article class="post">
-                                <figure class="post-thumb"><img src="{{ url("public/$berita->gambar") }}" alt="">
+                                <figure class="post-thumb"><img src="{{ url("public/$artikel->gambar") }}" alt="">
                                 </figure>
-                                <h4><a href="{{ url('berita/detail-berita', $berita->id) }}">{{$berita->judul}}</a></h4>
+                                <h4><a href="{{url('artikel/detail-artikel', $artikel->id)}}">{{$artikel->ket}}</a></h4>
                                 <!--post-meta-->
                                 <ul class="post-meta">
-                                    <li>{{$berita->created_at->format('d M Y')}}</li>
+                                    <li>{{$artikel->created_at->format('d M Y')}}</li>
                                 </ul>
                             </article>
                             @endforeach
+
                         </div>
-                    </aside>
+
+						</aside>
+
+
                 </div>
                 <!--Sidebar-->
 

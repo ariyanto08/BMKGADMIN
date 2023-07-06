@@ -8,7 +8,7 @@
                             <div class="col-xl-12 col-md-12 col-sm-12 col-12">
                                 <x-template.button.add url="#tambahdata" dto="modal" dta="#tambahdata"
                                     ket="Tambah Data" />
-                                <h4>Daftar Artikel, Buletin dan Edukasi Cuaca</h4>
+                                <h4>Daftar Artikel dan Buletin</h4>
                             </div>
                         </div>
                     </div>
@@ -18,6 +18,7 @@
                                 <thead>
                                     <tr>
                                         <th class="checkbox-column text-center"> No </th>
+                                        <th>Gambar Thumbnail</th>
                                         <th>Keterangan</th>
                                         <th>Kategori</th>
                                         <th class="text-center">Action</th>
@@ -27,6 +28,12 @@
                                     @foreach ($list_publikasi as $publikasi)
                                         <tr>
                                             <td class="checkbox-column text-center"> {{ $loop->iteration }} </td>
+                                            <td>
+                                                <div class="avatar avatar-xl">
+                                                    <img alt="avatar" src="{{ url("public/$publikasi->gambar") }}"
+                                                        class="rounded" />
+                                                </div>
+                                            </td>
                                             <td>{{ $publikasi->ket }}</td>
                                             <td>{{ $publikasi->kategori }}</td>
                                             <td class="text-center">
@@ -69,6 +76,10 @@
                     <form action="{{ url('data_manager/admin/publikasi') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf
+                        <label>Gambar Thumbnail</label>
+                        <div class="form-group">
+                            <input type="file" class="form-control" name="gambar">
+                        </div>
                         <label>Keterangan</label>
                         <div class="form-group">
                             <input id="nama" type="text" name="ket" placeholder="Keterangan"
@@ -80,7 +91,6 @@
                                 <option>--Pilih Kategori--</option>
                                 <option value="Artikel">Artikel</option>
                                 <option value="Buletin">Buletin</option>
-                                <option value="Edukasi Cuaca">Edukasi Cuaca</option>
                             </select>
                         </div>
                         <label>PDF</label>
@@ -119,6 +129,10 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                                    <label>Gambar Thumbnail</label>
+                                    <div class="form-group">
+                                        <input type="file" class="form-control" name="gambar">
+                                    </div>
                                     <label>Keterangan</label>
                                     <div class="form-group">
                                         <input id="nama" type="text" name="ket" placeholder="Keterangan"
@@ -127,10 +141,9 @@
                                     <label>Kategori</label>
                                     <div class="form-group">
                                         <select class="form-control" name="kategori">
-                                            <option>{{$publikasi->kategori}}</option>
+                                            <option>{{ $publikasi->kategori }}</option>
                                             <option value="Artikel">Artikel</option>
                                             <option value="Buletin">Buletin</option>
-                                            <option value="Edukasi Cuaca">Edukasi Cuaca</option>
                                         </select>
                                     </div>
                                     <label>PDF</label>

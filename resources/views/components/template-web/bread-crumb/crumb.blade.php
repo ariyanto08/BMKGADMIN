@@ -1,1 +1,1 @@
-<li class="active">{{ $crumb }}</li>
+<li><a href="{{$url}}" class="active">{{ $crumb }}</a></li>

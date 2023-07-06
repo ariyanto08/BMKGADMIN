@@ -11,7 +11,7 @@ class Crumb extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $crumb = null)
+    public function __construct(public $crumb = null,public $url = null)
     {
         //
     }

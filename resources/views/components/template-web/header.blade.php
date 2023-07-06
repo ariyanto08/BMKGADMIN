@@ -141,17 +141,17 @@
                                             <li class="dropdown">
                                                 <a>Maritim</a>
                                                 <ul>
-                                                    <li><a href="peringatan-dini-gelombang">Peringatan
+                                                    <li><a href="{{url('prakiraan/maritim/peringatan-dini-gelombang')}}">Peringatan
                                                             Dini Gelombang Tinggi</a></li>
-                                                    <li><a href="prakiraan-tinggi-gelombang">Prakiraan
+                                                    <li><a href="{{url('prakiraan/maritim/prakiraan-tinggi-gelombang')}}">Prakiraan
                                                             Tinggi Gelombang</a></li>
-                                                    <li><a href="prakiraan-cepat-angin-laut">Prakiraan
+                                                    <li><a href="{{url('prakiraan/maritim/prakiraan-cepat-angin-laut')}}">Prakiraan
                                                             Kecepatan Angin di Laut</a></li>
-                                                    <li><a href="prakiraan-cuaca-pelabuhan-laut">Prakiraan
+                                                    <li><a href="{{url('prakiraan/maritim/prakiraan-cuaca-pelabuhan-laut')}}">Prakiraan
                                                             Cuaca Pelabuhan Laut</a></li>
-                                                    <li><a href="pasang-surut-kendawangan">Pasang Surut
+                                                    <li><a href="{{url('prakiraan/maritim/pasang-surut-kendawangan')}}">Pasang Surut
                                                             Kendawangan</a></li>
-                                                    <li><a href="#">Peta Interaktif Prakiraan Maritim</a>
+                                                    <li><a href="{{url('prakiraan/maritim/peta-interaktif-prakiraan-maritim')}}">Peta Interaktif Prakiraan Maritim</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -273,20 +273,20 @@
                                     </li>
                                     <li class="dropdown"><a href="#" style="color: white !important">Publikasi</a>
                                         <ul>
-                                            <li><a href="berita">Berita</a></li>
-                                            <li><a href="artikel">Artikel</a></li>
-                                            <li><a href="buletin">Buletin</a></li>
-                                            <li><a href="buletin">Edukasi Cuaca</a></li>
-                                            <li><a href="buletin">Transparansi Kerja</a></li>
+                                            <li><a href="{{url('publikasi/berita')}}">Berita</a></li>
+                                            <li><a href="{{url('publikasi/artikel')}}">Artikel</a></li>
+                                            <li><a href="{{url('publikasi/buletin')}}">Buletin</a></li>
+                                            <li><a href="{{url('publikasi/edukasi-cuaca')}}">Edukasi Cuaca</a></li>
+                                            <li><a href="{{url('publikasi/transparansi-kerja')}}">Transparansi Kerja</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a style="color: white !important">Galeri</a>
                                         <ul>
-                                            <li><a href="foto">Foto</a></li>
-                                            <li><a href="video">Video</a></li>
+                                            <li><a href="{{url('galeri/foto')}}">Foto</a></li>
+                                            <li><a href="{{url('galeri/video')}}">Video</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="kontak" style="color: white !important">Kontak</a></li>
+                                    <li><a href="{{url('kontak')}}" style="color: white !important">Kontak</a></li>
                             </div>
                         </nav><!-- Main Menu End-->
                     </div>
@@ -372,17 +372,17 @@
                                 <li class="dropdown">
                                     <a>Maritim</a>
                                     <ul>
-                                        <li><a href="peringatan-dini-gelombang">Peringatan Dini
+                                        <li><a href="{{url('prakiraan/maritim/peringatan-dini-gelombang')}}">Peringatan Dini
                                                 Gelombang Tinggi</a></li>
-                                        <li><a href="prakiraan-tinggi-gelombang">Prakiraan Tinggi
+                                        <li><a href="{{url('prakiraan/maritim/prakiraan-tinggi-gelombang')}}">Prakiraan Tinggi
                                                 Gelombang</a></li>
-                                        <li><a href="prakiraan-cepat-angin-laut">Prakiraan Kecepatan
+                                        <li><a href="{{url('prakiraan/maritim/prakiraan-cepat-angin-laut')}}">Prakiraan Kecepatan
                                                 Angin di Laut</a></li>
-                                        <li><a href="prakiraan-cuaca-pelabuhan-laut">Prakiraan Cuaca
+                                        <li><a href="{{url('prakiraan/maritim/prakiraan-cuaca-pelabuhan-laut')}}">Prakiraan Cuaca
                                                 Pelabuhan Laut</a></li>
-                                        <li><a href="pasang-surut-kendawangan">Pasang Surut
+                                        <li><a href="{{url('prakiraan/maritim/pasang-surut-kendawangan')}}">Pasang Surut
                                                 Kendawangan</a></li>
-                                        <li><a href="#">Peta Interaktif Prakiraan Maritim</a></li>
+                                        <li><a href="{{url('prakiraan/maritim/peta-interaktif-prakiraan-maritim')}}">Peta Interaktif Prakiraan Maritim</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -495,21 +495,21 @@
                         </li>
                         <li class="dropdown"><a href="#">Publikasi</a>
                             <ul>
-                                <li><a href="berita">Berita</a></li>
-                                <li><a href="artikel">Artikel</a></li>
-                                <li><a href="buletin">Buletin</a></li>
-                                <li><a href="buletin">Edukasi Cuaca</a></li>
-                                <li><a href="buletin">Transparansi Kerja</a></li>
+                                <li><a href="{{url('publikasi/berita')}}">Berita</a></li>
+                                <li><a href="{{url('publikasi/artikel')}}">Artikel</a></li>
+                                <li><a href="{{url('publikasi/buletin')}}">Buletin</a></li>
+                                <li><a href="{{url('publikasi/edukasi-cuaca')}}">Edukasi Cuaca</a></li>
+                                <li><a href="{{url('publikasi/transparansi-kerja')}}">Transparansi Kerja</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a>Galeri</a>
                             <ul>
-                                <li><a href="foto">Foto</a></li>
-                                <li><a href="video">Video</a></li>
+                                <li><a href="{{url('galeri/foto')}}">Foto</a></li>
+                                <li><a href="{{url('galeri/video')}}">Video</a></li>
                             </ul>
                         </li>
-                        <li><a href="kontak">Kontak</a></li>
+                        <li><a href="{{url('kontak')}}">Kontak</a></li>
                 </div>
             </nav><!-- Main Menu End-->
         </div>

@@ -27,8 +27,8 @@
                         style="padding-bottom: 50px;">
                         <!-- inner-box -->
                         <div class="inner-box" style="max-width: 100%; max-height: 100%;">
-                            <figure class="image" style="max-height: 400px">
-                                <img style="max-height: 400px" src="{{ url("public/$pegawai->foto") }}" alt="" />
+                            <figure class="image" style="max-height: 300px; overflow: hidden;">
+                                <img style="width: 100%; height: auto;" src="{{ url("public/$pegawai->foto") }}" alt="" />
                             </figure>
                             <div class="overlay-box" style="margin-top: -10;">
                                 <div class="lower-content">

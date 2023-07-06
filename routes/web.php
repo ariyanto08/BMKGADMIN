@@ -152,3 +152,5 @@ Route::get('galeri/video',[GaleriController::class,'showVideo']);
 Route::get('galeri/foto',[GaleriController::class,'showFoto']);
 Route::get('publikasi/berita',[PublikasiWebController::class,'showBerita']);
 Route::get('berita/detail-berita/{berita}',[PublikasiWebController::class,'showDetailBerita']);
+Route::get('publikasi/artikel',[PublikasiWebController::class,'showArtikel']);
+Route::get('artikel/detail-artikel/{artikel}',[PublikasiWebController::class,'showDetailArtikel']);

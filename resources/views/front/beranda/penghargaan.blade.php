@@ -15,8 +15,8 @@
                             @foreach ($list_penghargaan as $penghargaan)
                                 <div class="news-style-two col-md-6 col-sm-6 col-xs-12">
                                     <div class="inner-box">
-                                        <figure class="image">
-                                            <img src="{{ url("public/$penghargaan->gambar") }}" alt="" />
+                                        <figure class="image" style="max-height: 350px; overflow: hidden;">
+                                            <img style="object-fit:cover; width: 100%; height: 350px;" src="{{ url("public/$penghargaan->gambar") }}" alt="" />
 
                                             <div class="date">
                                                 {{ $penghargaan->created_at->format('d M Y') }} <span

@@ -56,7 +56,7 @@
                                             alt="">
                                     </figure>
                                     <h4><a
-                                            href="{{ url('artikel/detail-artikel', $artikel->id) }}">{{ $artikel->judul }}</a>
+                                            href="{{ url('artikel/detail-artikel', $artikel->id) }}">{{ $artikel->ket }}</a>
                                     </h4>
                                     <!--post-meta-->
                                     <ul class="post-meta">

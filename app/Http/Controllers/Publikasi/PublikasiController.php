@@ -9,6 +9,7 @@ class PublikasiController extends Controller
 {
     function index(){
         $data['list_publikasi'] = Publikasi::all();
+        $data['list_publikasi'] = Publikasi::latest()->get();
         return view('content.publikasi.index',$data);
     }
     function create()

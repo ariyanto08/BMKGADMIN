@@ -9,6 +9,7 @@ class UserController extends Controller
 {
     function index(){
         $data['list_user'] = User::all();
+        $data['list_user'] = User::latest()->get();
         return view('content.user.index',$data);
     }
     function create()

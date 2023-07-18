@@ -39,7 +39,7 @@
                                     <a href="{{ url('artikel/detail-artikel', $artikel->id) }}"><img src="{{ url("public/$artikel->gambar") }}" alt="" /></a>
 
                                     <div class="date">
-                                        {{$artikel->created_at->format('d M')}} <span class="flaticon-video-camera"></span>
+                                        {{$artikel->created_at->format('d M')}} <span class="flaticon-gallery"></span>
                                     </div>
 
                                 </figure>

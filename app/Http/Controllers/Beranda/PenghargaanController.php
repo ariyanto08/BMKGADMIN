@@ -9,6 +9,7 @@ class PenghargaanController extends Controller
 {
     function index(){
         $data['list_penghargaan'] = Penghargaan::all();
+        $data['list_penghargaan'] = Penghargaan::latest()->get();
         return view('content.beranda.penghargaan.index',$data);
     }
     function create()

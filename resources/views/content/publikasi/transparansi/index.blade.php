@@ -31,8 +31,8 @@
                                             <td>{{ $transparansi->kategori }}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
-                                                    <a href="{{ url("public/$transparansi->file") }}"><button
-                                                        class="btn btn-info btn-tone bs-tooltip">Download</button></a>
+                                                    <a target="_blank" href="{{ url("public/$transparansi->file") }}"><button
+                                                        class="btn btn-info btn-tone bs-tooltip">Detail</button></a>
                                                     <x-template.button.edit dto="modal"
                                                         dta="#editdata{{ $transparansi->id }}" />
                                                     <x-template.button.delete id="{{ $transparansi->id }}" />

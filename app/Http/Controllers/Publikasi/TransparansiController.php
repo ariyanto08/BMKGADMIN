@@ -9,6 +9,7 @@ class TransparansiController extends Controller
 {
     function index(){
         $data['list_transparansi'] = Transparansi::all();
+        $data['list_transparansi'] = Transparansi::latest()->get();
         return view('content.publikasi.transparansi.index',$data);
     }
     function create()

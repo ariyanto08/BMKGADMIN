@@ -9,6 +9,7 @@ class FotoController extends Controller
 {
     function index(){
         $data['list_foto'] = Foto::all();
+        $data['list_foto'] = Foto::latest()->get();
         return view('content.galeri.foto.index',$data);
     }
     function create()

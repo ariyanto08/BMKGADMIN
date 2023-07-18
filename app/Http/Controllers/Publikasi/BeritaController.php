@@ -9,6 +9,7 @@ class BeritaController extends Controller
 {
     function index(){
         $data['list_berita'] = Berita::all();
+        $data['list_berita'] = Berita::latest()->get();
         return view('content.publikasi.berita.index',$data);
     }
     function create()

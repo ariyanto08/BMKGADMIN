@@ -157,31 +157,31 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="#"
+                                    <li class="dropdown"><a
                                             style="color: white !important">Pengamatan</a>
                                         <ul>
                                             <li class="dropdown">
-                                                <a href="">Citra Satelit</a>
+                                                <a>Citra Satelit</a>
                                                 <ul>
-                                                    <li><a href="kalimantan-barat">Kalimantan Barat</a>
+                                                    <li><a href="{{url('pengamatan/citra-satelit/kalbar')}}">Kalimantan Barat</a>
                                                     </li>
-                                                    <li><a href="cloud-type-wilayah-indonesia">Cloud
+                                                    <li><a href="{{url('pengamatan/citra-satelit/cloud-type-indo')}}">Cloud
                                                             Type Wilayah Indonesia</a></li>
-                                                    <li><a href="sebaran-asap">Sebaran Asap</a></li>
-                                                    <li><a href="curah-hujan-akumulasi">Curah Hujan
+                                                    <li><a href="{{url('pengamatan/citra-satelit/sebaran-asap')}}">Sebaran Asap</a></li>
+                                                    <li><a href="{{url('pengamatan/citra-satelit/curah-hujan-akumulasi')}}">Curah Hujan
                                                             Akumulasi</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
                                                 <a href="#">Citra Radar Cuaca</a>
                                                 <ul>
-                                                    <li><a href="indonesia">Indonesia</a></li>
-                                                    <li><a href="sintang">Sintang</a></li>
-                                                    <li><a href="pontianak">Pontianak</a></li>
-                                                    <li><a href="pangkalanbun">Pangkalanbun</a></li>
+                                                    <li><a href="{{url('pengamatan/citra-radar-cuaca/indonesia')}}">Indonesia</a></li>
+                                                    <li><a href="{{url('pengamatan/citra-radar-cuaca/sintang')}}">Sintang</a></li>
+                                                    <li><a href="{{url('pengamatan/citra-radar-cuaca/pontianak')}}">Pontianak</a></li>
+                                                    <li><a href="{{url('pengamatan/citra-radar-cuaca/pangkalanbun')}}">Pangkalanbun</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="titik-panas-kalimantan-barat">Titik Panas
+                                            <li><a href="{{url('pengamatan/titik-panas-kalbar')}}">Titik Panas
                                                     Kalimantan Barat</a></li>
                                             <li class="dropdown">
                                                 <a href="#">Ikhtisar Cuaca</a>
@@ -251,22 +251,22 @@
                                     <li class="dropdown"><a href="#" style="color: white !important">Layanan
                                             Publik</a>
                                         <ul>
-                                            <li><a href="#">Prosedur Layanan</a></li>
-                                            <li><a href="#">Informasi Layanan</a></li>
+                                            <li><a href="{{url('layananpublik/pelayanan')}}">Prosedur Layanan</a></li>
+                                            <li><a href="{{url('layananpublik/informasilayanan')}}">Informasi Layanan</a></li>
                                             <li class="dropdown">
-                                                <a href="#">Pelayanan Data Informasi</a>
+                                                <a>Pelayanan Data Informasi</a>
                                                 <ul>
                                                     <li><a href="#">Pelayanan untuk Instansi/Perusahaan</a>
                                                     </li>
                                                     <li><a href="#">Pelayanan untuk Pleajar</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Prosedur Pembayaran Jasa Layanan</a></li>
+                                            <li><a href="{{url('layananpublik/pembayaran')}}">Prosedur Pembayaran Jasa Layanan</a></li>
                                             <li class="dropdown">
-                                                <a href="#">Pelayanan</a>
+                                                <a>Pelayanan</a>
                                                 <ul>
-                                                    <li><a href="#">Contoh Surat Pengantar</a></li>
-                                                    <li><a href="#">Regulasi</a></li>
+                                                    <li><a href="{{url('layananpublik/pelayanan/contoh-surat-pengantar')}}">Contoh Surat Pengantar</a></li>
+                                                    <li><a href="{{url('layananpublik/pelayanan/regulasi')}}">Regulasi</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -387,29 +387,29 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="#">Pengamatan</a>
+                        <li class="dropdown"><a>Pengamatan</a>
                             <ul>
                                 <li class="dropdown">
-                                    <a href="#">Citra Satelit</a>
+                                    <a>Citra Satelit</a>
                                     <ul>
-                                        <li><a href="kalimantan-barat">Kalimantan Barat</a></li>
-                                        <li><a href="cloud-type-wilayah-indonesia">Cloud Type Wilayah
+                                        <li><a href="{{url('pengamatan/citra-satelit/kalbar')}}">Kalimantan Barat</a></li>
+                                        <li><a href="{{url('pengamatan/citra-satelit/cloud-type-indo')}}">Cloud Type Wilayah
                                                 Indonesia</a></li>
-                                        <li><a href="sebaran-asap">Sebaran Asap</a></li>
-                                        <li><a href="curah-hujan-akumulasi">Curah Hujan Akumulasi</a>
+                                        <li><a href="{{url('pengamatan/citra-satelit/sebaran-asap')}}">Sebaran Asap</a></li>
+                                        <li><a href="{{url('pengamatan/citra-satelit/curah-hujan-akumulasi')}}">Curah Hujan Akumulasi</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">Citra Radar Cuaca</a>
+                                    <a>Citra Radar Cuaca</a>
                                     <ul>
-                                        <li><a href="indonesia">Indonesia</a></li>
-                                        <li><a href="sintang">Sintang</a></li>
-                                        <li><a href="pontianak">Pontianak</a></li>
-                                        <li><a href="pangkalanbun">Pangkalanbun</a></li>
+                                        <li><a href="{{url('pengamatan/citra-radar-cuaca/indonesia')}}">Indonesia</a></li>
+                                        <li><a href="{{url('pengamatan/citra-radar-cuaca/sintang')}}">Sintang</a></li>
+                                        <li><a href="{{url('pengamatan/citra-radar-cuaca/pontianak')}}">Pontianak</a></li>
+                                        <li><a href="{{url('pengamatan/citra-radar-cuaca/pangkalanbun')}}">Pangkalanbun</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="titik-panas-kalimantan-barat">Titik Panas Kalimantan
+                                <li><a href="{{url('pengamatan/titik-panas-kalbar')}}">Titik Panas Kalimantan
                                         Barat</a></li>
                                 <li class="dropdown">
                                     <a href="#">Ikhtisar Cuaca</a>
@@ -474,8 +474,8 @@
 
                         <li class="dropdown"><a href="#">Layanan Publik</a>
                             <ul>
-                                <li><a href="#">Prosedur Layanan</a></li>
-                                <li><a href="#">Informasi Layanan</a></li>
+                                <li><a href="{{url('layananpublik/pelayanan')}}">Prosedur Layanan</a></li>
+                                <li><a href="{{url('layananpublik/informasilayanan')}}">Informasi Layanan</a></li>
                                 <li class="dropdown">
                                     <a href="#">Pelayanan Data Informasi</a>
                                     <ul>
@@ -483,12 +483,12 @@
                                         <li><a href="#">Pelayanan untuk Pleajar</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Prosedur Pembayaran Jasa Layanan</a></li>
+                                <li><a href="{{url('layananpublik/pembayaran')}}">Prosedur Pembayaran Jasa Layanan</a></li>
                                 <li class="dropdown">
-                                    <a href="#">Pelayanan</a>
+                                    <a>Pelayanan</a>
                                     <ul>
-                                        <li><a href="#">Contoh Surat Pengantar</a></li>
-                                        <li><a href="#">Regulasi</a></li>
+                                        <li><a href="{{url('layananpublik/pelayanan/contoh-surat-pengantar')}}">Contoh Surat Pengantar</a></li>
+                                        <li><a href="{{url('layananpublik/pelayanan/regulasi')}}">Regulasi</a></li>
                                     </ul>
                                 </li>
                             </ul>

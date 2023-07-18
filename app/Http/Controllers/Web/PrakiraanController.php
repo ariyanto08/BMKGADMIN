@@ -13,6 +13,7 @@ class PrakiraanController extends Controller
     // Cuaca
     function showDini(){
         $data['list_dini'] = Dini::all();
+        $data['list_dini'] = Dini::latest()->get();
         return view('front.prakiraan.cuaca.peringatan-dini-cuaca',$data);
     }
     function showKetapang(){
@@ -28,6 +29,7 @@ class PrakiraanController extends Controller
     }
     function showMingguan(){
         $data['list_mingguan'] = Mingguan::all();
+        $data['list_mingguan'] = Mingguan::latest()->get();
         return view('front.prakiraan.cuaca.prakiraan-mingguan-ketapang',$data);
     }
     function showPotensi(){
@@ -35,6 +37,7 @@ class PrakiraanController extends Controller
     }
     function showAngin(){
         $data['list_angin'] = Angin::all();
+        $data['list_angin'] = Angin::latest()->get();
         return view('front.prakiraan.cuaca.prakiraan-angin-3000-feet',$data);
     }
     function showAwan(){

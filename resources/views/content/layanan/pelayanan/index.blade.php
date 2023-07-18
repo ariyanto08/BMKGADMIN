@@ -31,7 +31,7 @@
                                             <td>{{ $pelayanan->kategori }}</td>
                                             <td class="text-center">
                                                 <div class="form-group">
-                                                    <a href="{{ url("public/$pelayanan->file") }}"><button class="btn btn-info btn-tone bs-tooltip">Download</button></a>
+                                                    <a target="_blank" href="{{ url("public/$pelayanan->file") }}"><button class="btn btn-info btn-tone bs-tooltip">Detail</button></a>
                                                     <x-template.button.edit dto="modal"
                                                         dta="#editdata{{ $pelayanan->id }}" />
                                                     <x-template.button.delete id="{{ $pelayanan->id }}" />

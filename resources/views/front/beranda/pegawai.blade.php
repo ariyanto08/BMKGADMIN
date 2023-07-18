@@ -26,9 +26,9 @@
                     <div class="team-style-one col-md-3 col-sm-6 col-xs-12 masonry-item all {{ $pegawai->kategori }}"
                         style="padding-bottom: 50px;">
                         <!-- inner-box -->
-                        <div class="inner-box" style="max-width: 100%; max-height: 100%;">
-                            <figure class="image" style="max-height: 300px; overflow: hidden;">
-                                <img style="width: 100%; height: auto;" src="{{ url("public/$pegawai->foto") }}" alt="" />
+                        <div class="inner-box" style="max-width: 100%; max-height: 600px;">
+                            <figure class="image" style="max-height: 350px; overflow: hidden;">
+                                <img style="object-fit:cover; width: 100%; height: 350px;" src="{{ url("public/$pegawai->foto") }}" alt="" />
                             </figure>
                             <div class="overlay-box" style="margin-top: -10;">
                                 <div class="lower-content">

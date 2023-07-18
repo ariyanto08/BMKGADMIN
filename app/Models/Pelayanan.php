@@ -16,7 +16,7 @@ class Pelayanan extends Model
         if (request()->hasFile('file')) {
             $file = request()->file('file');
             $destination = "pdf/pelayanan";
-            $filename = $file->getClientOriginalName();
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $url =  $file->storeAs($destination, $filename);
             $this->file = "" . $url;
             $this->save();

@@ -97,7 +97,7 @@
                         <label>Jenis Informasi</label>
                         <div class="form-group">
                             <input type="text" name="isi" placeholder="Jenis Informasi"
-                                class="form-control" required>
+                                class="form-control">
                         </div>
 
                         <label>Sub Jenis Informasi</label>
@@ -109,13 +109,13 @@
                         <label>Satuan</label>
                         <div class="form-group">
                             <input type="text" name="satuan" placeholder="Satuan"
-                                class="form-control" required>
+                                class="form-control">
                         </div>
 
                         <label>Tarif</label>
                         <div class="form-group">
                             <input type="text" name="tarif" placeholder="Tarif"
-                                class="form-control" required>
+                                class="form-control">
                         </div>
                         <input type="submit" class="mt-4 btn btn-primary float-right">
                     </form>

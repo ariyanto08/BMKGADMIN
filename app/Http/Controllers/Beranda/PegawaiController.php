@@ -9,6 +9,7 @@ class PegawaiController extends Controller
 {
     function index(){
         $data['list_pegawai'] = Pegawai::all();
+        $data['list_pegawai'] = Pegawai::latest()->get();
         return view('content.beranda.pegawai.index',$data);
     }
     function create()

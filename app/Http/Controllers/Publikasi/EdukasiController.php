@@ -9,6 +9,7 @@ class EdukasiController extends Controller
 {
     function index(){
         $data['list_edukasi'] = Edukasi::all();
+        $data['list_edukasi'] = Edukasi::latest()->get();
         return view('content.publikasi.edukasi.index',$data);
     }
     function create()

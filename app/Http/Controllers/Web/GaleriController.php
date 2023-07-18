@@ -9,6 +9,7 @@ class GaleriController extends Controller
 {
     function showFoto(){
         $data['list_foto']= Foto::all();
+        $data['list_foto'] = Foto::latest()->get();
         return view('front.galeri.foto',$data);
     }
     function showVideo(){
